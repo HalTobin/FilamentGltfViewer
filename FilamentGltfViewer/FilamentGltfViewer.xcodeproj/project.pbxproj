@@ -1,0 +1,863 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BDD61302F18DD8F005D06CD /* FilamentGltfViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */; };
+		4BDD61312F18DD8F005D06CD /* FilamentGltfViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BDD61FF2F18E126005D06CD /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = 4BDD61FE2F18E126005D06CD /* Scene */; };
+		4BDD62242F18FDB4005D06CD /* FilamentGltfViewerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD621E2F18FDB4005D06CD /* FilamentGltfViewerSwift.framework */; };
+		4BDD62252F18FDB4005D06CD /* FilamentGltfViewerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD621E2F18FDB4005D06CD /* FilamentGltfViewerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BDD623B2F18FE45005D06CD /* FilamentGltfViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */; };
+		4BDD623C2F18FE45005D06CD /* FilamentGltfViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BDD612E2F18DD8F005D06CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BDD61012F18DC97005D06CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDD61292F18DD8F005D06CD;
+			remoteInfo = FilamentGltfViewer;
+		};
+		4BDD62222F18FDB4005D06CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BDD61012F18DC97005D06CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDD621D2F18FDB4005D06CD;
+			remoteInfo = FilamentGltfViewerSwift;
+		};
+		4BDD623D2F18FE45005D06CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BDD61012F18DC97005D06CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDD61292F18DD8F005D06CD;
+			remoteInfo = FilamentGltfViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4BDD61352F18DD8F005D06CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BDD61312F18DD8F005D06CD /* FilamentGltfViewer.framework in Embed Frameworks */,
+				4BDD62252F18FDB4005D06CD /* FilamentGltfViewerSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD623F2F18FE45005D06CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BDD623C2F18FE45005D06CD /* FilamentGltfViewer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4BDD61092F18DC97005D06CD /* FilamentGltfViewerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentGltfViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilamentGltfViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDD61FE2F18E126005D06CD /* Scene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scene; sourceTree = "<group>"; };
+		4BDD621E2F18FDB4005D06CD /* FilamentGltfViewerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilamentGltfViewerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4BDD61372F18DDA1005D06CD /* Exceptions for "FilamentGltfViewer" folder in "FilamentGltfViewer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Filament/FILModelView.h,
+				Filament/FILViewController.h,
+			);
+			publicHeaders = (
+				Wrapper/FILSwiftViewController.h,
+			);
+			target = 4BDD61292F18DD8F005D06CD /* FilamentGltfViewer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4BDD610B2F18DC97005D06CD /* FilamentGltfViewerApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FilamentGltfViewerApp;
+			sourceTree = "<group>";
+		};
+		4BDD612B2F18DD8F005D06CD /* FilamentGltfViewer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4BDD61372F18DDA1005D06CD /* Exceptions for "FilamentGltfViewer" folder in "FilamentGltfViewer" target */,
+			);
+			path = FilamentGltfViewer;
+			sourceTree = "<group>";
+		};
+		4BDD620D2F18E17A005D06CD /* generated */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = generated;
+			sourceTree = "<group>";
+		};
+		4BDD621F2F18FDB4005D06CD /* FilamentGltfViewerSwift */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FilamentGltfViewerSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BDD61062F18DC97005D06CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDD61302F18DD8F005D06CD /* FilamentGltfViewer.framework in Frameworks */,
+				4BDD62242F18FDB4005D06CD /* FilamentGltfViewerSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD61272F18DD8F005D06CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD621B2F18FDB4005D06CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDD623B2F18FE45005D06CD /* FilamentGltfViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BDD61002F18DC97005D06CD = {
+			isa = PBXGroup;
+			children = (
+				4BDD620D2F18E17A005D06CD /* generated */,
+				4BDD61FE2F18E126005D06CD /* Scene */,
+				4BDD610B2F18DC97005D06CD /* FilamentGltfViewerApp */,
+				4BDD612B2F18DD8F005D06CD /* FilamentGltfViewer */,
+				4BDD621F2F18FDB4005D06CD /* FilamentGltfViewerSwift */,
+				4BDD623A2F18FE45005D06CD /* Frameworks */,
+				4BDD610A2F18DC97005D06CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BDD610A2F18DC97005D06CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BDD61092F18DC97005D06CD /* FilamentGltfViewerApp.app */,
+				4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */,
+				4BDD621E2F18FDB4005D06CD /* FilamentGltfViewerSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BDD623A2F18FE45005D06CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4BDD61252F18DD8F005D06CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD62192F18FDB4005D06CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4BDD61082F18DC97005D06CD /* FilamentGltfViewerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BDD61142F18DC98005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewerApp" */;
+			buildPhases = (
+				4BDD61052F18DC97005D06CD /* Sources */,
+				4BDD61062F18DC97005D06CD /* Frameworks */,
+				4BDD61072F18DC97005D06CD /* Resources */,
+				4BDD61352F18DD8F005D06CD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BDD612F2F18DD8F005D06CD /* PBXTargetDependency */,
+				4BDD62232F18FDB4005D06CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4BDD610B2F18DC97005D06CD /* FilamentGltfViewerApp */,
+			);
+			name = FilamentGltfViewerApp;
+			packageProductDependencies = (
+			);
+			productName = FilamentGltfViewer;
+			productReference = 4BDD61092F18DC97005D06CD /* FilamentGltfViewerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BDD61292F18DD8F005D06CD /* FilamentGltfViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BDD61322F18DD8F005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewer" */;
+			buildPhases = (
+				4BDD61382F18DDC0005D06CD /* Build Filament */,
+				4BDD61252F18DD8F005D06CD /* Headers */,
+				4BDD61262F18DD8F005D06CD /* Sources */,
+				4BDD61272F18DD8F005D06CD /* Frameworks */,
+				4BDD61282F18DD8F005D06CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4BDD612B2F18DD8F005D06CD /* FilamentGltfViewer */,
+				4BDD620D2F18E17A005D06CD /* generated */,
+			);
+			name = FilamentGltfViewer;
+			packageProductDependencies = (
+			);
+			productName = FilamentGltfViewer;
+			productReference = 4BDD612A2F18DD8F005D06CD /* FilamentGltfViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4BDD621D2F18FDB4005D06CD /* FilamentGltfViewerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BDD62262F18FDB4005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewerSwift" */;
+			buildPhases = (
+				4BDD62192F18FDB4005D06CD /* Headers */,
+				4BDD621A2F18FDB4005D06CD /* Sources */,
+				4BDD621B2F18FDB4005D06CD /* Frameworks */,
+				4BDD621C2F18FDB4005D06CD /* Resources */,
+				4BDD623F2F18FE45005D06CD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BDD623E2F18FE45005D06CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4BDD621F2F18FDB4005D06CD /* FilamentGltfViewerSwift */,
+			);
+			name = FilamentGltfViewerSwift;
+			packageProductDependencies = (
+			);
+			productName = FilamentGltfViewerSwift;
+			productReference = 4BDD621E2F18FDB4005D06CD /* FilamentGltfViewerSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BDD61012F18DC97005D06CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					4BDD61082F18DC97005D06CD = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					4BDD61292F18DD8F005D06CD = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					4BDD621D2F18FDB4005D06CD = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = 4BDD61042F18DC97005D06CD /* Build configuration list for PBXProject "FilamentGltfViewer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BDD61002F18DC97005D06CD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4BDD610A2F18DC97005D06CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BDD61082F18DC97005D06CD /* FilamentGltfViewerApp */,
+				4BDD61292F18DD8F005D06CD /* FilamentGltfViewer */,
+				4BDD621D2F18FDB4005D06CD /* FilamentGltfViewerSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BDD61072F18DC97005D06CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD61282F18DD8F005D06CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDD61FF2F18E126005D06CD /* Scene in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD621C2F18FDB4005D06CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BDD61382F18DDC0005D06CD /* Build Filament */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../filament/third_party/environments/lightroom_14b.hdr",
+			);
+			name = "Build Filament";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/generated/default_env/default_env_ibl.ktx",
+				"$(SRCROOT)/generated/default_env/default_env_skybox.ktx",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#/usr/bin/env/bash\n\nset -e\n\n# Compile resources.\n\n# The gltf-viewer app requires two resources:\n# 1. The IBL image\n# 2. The skybox image\n\nHOST_TOOLS_PATH=\"${HOST_TOOLS_PATH:-../filament/out/release/filament/bin}\"\n\ncmgen_path=`find ${HOST_TOOLS_PATH} -name cmgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/default_env\" \\\n    --format=ktx --size=256 --extract-blur=0.1 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/lightroom_14b.hdr\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BDD61052F18DC97005D06CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD61262F18DD8F005D06CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDD621A2F18FDB4005D06CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BDD612F2F18DD8F005D06CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BDD61292F18DD8F005D06CD /* FilamentGltfViewer */;
+			targetProxy = 4BDD612E2F18DD8F005D06CD /* PBXContainerItemProxy */;
+		};
+		4BDD62232F18FDB4005D06CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BDD621D2F18FDB4005D06CD /* FilamentGltfViewerSwift */;
+			targetProxy = 4BDD62222F18FDB4005D06CD /* PBXContainerItemProxy */;
+		};
+		4BDD623E2F18FE45005D06CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BDD61292F18DD8F005D06CD /* FilamentGltfViewer */;
+			targetProxy = 4BDD623D2F18FE45005D06CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4BDD61122F18DC98005D06CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9YN25LRNBV;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4BDD61132F18DC98005D06CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9YN25LRNBV;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BDD61152F18DC98005D06CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = moineaufactory.FilamentGltfViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BDD61162F18DC98005D06CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = moineaufactory.FilamentGltfViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4BDD61332F18DD8F005D06CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FILAMENT_APP_USE_METAL=1",
+					"$(inherited)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../filament/out/ios-debug/filament/include",
+					generated,
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../filament/out/ios-debug/filament/lib/$(CURRENT_ARCH)",
+					"../filament/out/ios-debug/filament/lib/universal",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = (
+					"-lfilament",
+					"-lbackend",
+					"-lfilaflat",
+					"-lktxreader",
+					"-lfilabridge",
+					"-lutils",
+					"-lsmol-v",
+					"-lgeometry",
+					"-libl",
+					"-labseil",
+					"-lzstd",
+					"-lgltfio_core",
+					"-luberarchive",
+					"-limage",
+					"-lstb",
+					"-lbasis_transcoder",
+					"-lzstd",
+					"-lcamutils",
+					"-ldracodec",
+					"-lmeshoptimizer",
+					"-lviewer",
+					"-lcivetweb",
+					"-luberzlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BDD61342F18DD8F005D06CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "FILAMENT_APP_USE_METAL=1";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../filament/out/ios-release/filament/include",
+					generated,
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../filament/out/ios-release/filament/lib/$(CURRENT_ARCH)",
+					"../filament/out/ios-release/filament/lib/universal",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = (
+					"-lfilament",
+					"-lbackend",
+					"-lfilaflat",
+					"-lktxreader",
+					"-lfilabridge",
+					"-lutils",
+					"-lsmol-v",
+					"-lgeometry",
+					"-libl",
+					"-labseil",
+					"-lzstd",
+					"-lgltfio_core",
+					"-luberarchive",
+					"-limage",
+					"-lstb",
+					"-lbasis_transcoder",
+					"-lzstd",
+					"-lcamutils",
+					"-ldracodec",
+					"-lmeshoptimizer",
+					"-lviewer",
+					"-lcivetweb",
+					"-luberzlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BDD62272F18FDB4005D06CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = moineaufactory.FilamentGltfViewerSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BDD62282F18FDB4005D06CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F4UP4UW7SU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = moineaufactory.FilamentGltfViewerSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BDD61042F18DC97005D06CD /* Build configuration list for PBXProject "FilamentGltfViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BDD61122F18DC98005D06CD /* Debug */,
+				4BDD61132F18DC98005D06CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BDD61142F18DC98005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BDD61152F18DC98005D06CD /* Debug */,
+				4BDD61162F18DC98005D06CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BDD61322F18DD8F005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BDD61332F18DD8F005D06CD /* Debug */,
+				4BDD61342F18DD8F005D06CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BDD62262F18FDB4005D06CD /* Build configuration list for PBXNativeTarget "FilamentGltfViewerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BDD62272F18FDB4005D06CD /* Debug */,
+				4BDD62282F18FDB4005D06CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BDD61012F18DC97005D06CD /* Project object */;
+}
