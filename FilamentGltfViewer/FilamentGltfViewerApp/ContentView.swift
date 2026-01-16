@@ -1,12 +1,9 @@
 import SwiftUI
-//import FilamentGltfViewer
+import FilamentGltfViewer
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Test")
-        }
-        .padding()
+        FILView()
     }
 }
 

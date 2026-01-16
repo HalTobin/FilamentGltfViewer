@@ -12,6 +12,8 @@ targets:
       - path: FilamentGltfViewerApp
       - path: 'FilamentGltfViewerApp/Assets.xcassets'
         buildPhase: resources
+    dependencies:
+      - target: FilamentGltfViewer
 
   FilamentGltfViewer:
     type: framework
@@ -32,8 +34,10 @@ targets:
         optional: true
     settings:
       base:
+        PRODUCT_MODULE_NAME: FilamentGltfViewer
+        SWIFT_ENABLE_EXPLICIT_MODULES: NO
         DEFINES_MODULE: YES
-        MODULEMAP_FILE: FilamentGltfViewer/module.modulemap
+        #MODULEMAP_FILE: FilamentGltfViewer/module.modulemap
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         OTHER_LDFLAGS: ["-lfilament", "-lbackend", "-lfilaflat", "-lktxreader",
                         "-lfilabridge", "-lutils", "-lsmol-v", "-lgeometry", "-libl",
@@ -65,53 +69,53 @@ targets:
           - "$(PROJECT_DIR)/generated/default_env/default_env_ibl.ktx"
           - "$(PROJECT_DIR)/generated/default_env/default_env_skybox.ktx"  
 
-  FilamentGltfViewerAppStandalone:
-    type: application
-    platform: iOS
-    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
-    SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
-    deploymentTarget: "15.6"
-    sources:
-      - path: FilamentGltfViewerAppStandalone
-      - path: 'FilamentGltfViewerAppStandalone/Assets.xcassets'
-        buildPhase: resources
-      - path: 'Scene/'
-        type: folder
-        buildPhase: resources
-      - path: 'generated/default_env/default_env_ibl.ktx'
-        buildPhase: resources
-        optional: true
-      - path: 'generated/default_env/default_env_skybox.ktx'
-        buildPhase: resources
-        optional: true
-    settings:
-      base:
-        ENABLE_USER_SCRIPT_SANDBOXING: NO
-        SWIFT_OBJC_BRIDGING_HEADER: "FilamentGltfViewerAppStandalone/FilamentGltfViewer-Bridging-Header.h"
-        OTHER_LDFLAGS: ["-lfilament", "-lbackend", "-lfilaflat", "-lktxreader",
-                        "-lfilabridge", "-lutils", "-lsmol-v", "-lgeometry", "-libl",
-                        "-labseil", "-lzstd", "-lgltfio_core", "-luberarchive", "-limage", "-lstb", "-lbasis_transcoder",
-                        "-lzstd", "-lcamutils", "-ldracodec", "-lmeshoptimizer", "-lviewer", "-lcivetweb",
-                        "-luberzlib"]
-        ENABLE_BITCODE: NO
-        CLANG_CXX_LANGUAGE_STANDARD: c++20
-        SAMPLE_CODE_DISAMBIGUATOR: ${DEVELOPMENT_TEAM}
-      configs:
-        debug:
-          HEADER_SEARCH_PATHS: ["../filament/out/ios-debug/filament/include", "generated"]
-          LIBRARY_SEARCH_PATHS:
-            - "../filament/out/ios-debug/filament/lib/$(CURRENT_ARCH)"
-            - "../filament/out/ios-debug/filament/lib/universal"
-        release:
-          HEADER_SEARCH_PATHS: ["../filament/out/ios-release/filament/include", "generated"]
-          LIBRARY_SEARCH_PATHS:
-            - "../filament/out/ios-release/filament/lib/$(CURRENT_ARCH)"
-            - "../filament/out/ios-release/filament/lib/universal"
-    preBuildScripts:
-      - path: build-resources.sh
-        name: Build Filament Resources
-        inputFiles:
-          - "$(PROJECT_DIR)/../filament/third_party/environments/lightroom_14b.hdr"
-        outputFiles:
-          - "$(PROJECT_DIR)/generated/default_env/default_env_ibl.ktx"
-          - "$(PROJECT_DIR)/generated/default_env/default_env_skybox.ktx"
+  # FilamentGltfViewerAppStandalone:
+  #   type: application
+  #   platform: iOS
+  #   SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+  #   SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
+  #   deploymentTarget: "15.6"
+  #   sources:
+  #     - path: FilamentGltfViewerAppStandalone
+  #     - path: 'FilamentGltfViewerAppStandalone/Assets.xcassets'
+  #       buildPhase: resources
+  #     - path: 'Scene/'
+  #       type: folder
+  #       buildPhase: resources
+  #     - path: 'generated/default_env/default_env_ibl.ktx'
+  #       buildPhase: resources
+  #       optional: true
+  #     - path: 'generated/default_env/default_env_skybox.ktx'
+  #       buildPhase: resources
+  #       optional: true
+  #   settings:
+  #     base:
+  #       ENABLE_USER_SCRIPT_SANDBOXING: NO
+  #       SWIFT_OBJC_BRIDGING_HEADER: "FilamentGltfViewerAppStandalone/FilamentGltfViewer-Bridging-Header.h"
+  #       OTHER_LDFLAGS: ["-lfilament", "-lbackend", "-lfilaflat", "-lktxreader",
+  #                       "-lfilabridge", "-lutils", "-lsmol-v", "-lgeometry", "-libl",
+  #                       "-labseil", "-lzstd", "-lgltfio_core", "-luberarchive", "-limage", "-lstb", "-lbasis_transcoder",
+  #                       "-lzstd", "-lcamutils", "-ldracodec", "-lmeshoptimizer", "-lviewer", "-lcivetweb",
+  #                       "-luberzlib"]
+  #       ENABLE_BITCODE: NO
+  #       CLANG_CXX_LANGUAGE_STANDARD: c++20
+  #       SAMPLE_CODE_DISAMBIGUATOR: ${DEVELOPMENT_TEAM}
+  #     configs:
+  #       debug:
+  #         HEADER_SEARCH_PATHS: ["../filament/out/ios-debug/filament/include", "generated"]
+  #         LIBRARY_SEARCH_PATHS:
+  #           - "../filament/out/ios-debug/filament/lib/$(CURRENT_ARCH)"
+  #           - "../filament/out/ios-debug/filament/lib/universal"
+  #       release:
+  #         HEADER_SEARCH_PATHS: ["../filament/out/ios-release/filament/include", "generated"]
+  #         LIBRARY_SEARCH_PATHS:
+  #           - "../filament/out/ios-release/filament/lib/$(CURRENT_ARCH)"
+  #           - "../filament/out/ios-release/filament/lib/universal"
+  #   preBuildScripts:
+  #     - path: build-resources.sh
+  #       name: Build Filament Resources
+  #       inputFiles:
+  #         - "$(PROJECT_DIR)/../filament/third_party/environments/lightroom_14b.hdr"
+  #       outputFiles:
+  #         - "$(PROJECT_DIR)/generated/default_env/default_env_ibl.ktx"
+  #         - "$(PROJECT_DIR)/generated/default_env/default_env_skybox.ktx"

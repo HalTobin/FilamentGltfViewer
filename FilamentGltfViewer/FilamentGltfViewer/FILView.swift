@@ -1,6 +1,5 @@
 import UIKit
 import SwiftUI
-//import FilamentGltfViewerInternal
 
 public struct FILView: UIViewControllerRepresentable {
     
