@@ -10,15 +10,18 @@
 		05EC2964CCF756CF39704034 /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
 		0918D5AE4A687F28CD86B4C7 /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
 		271050ACAE38635F4BA28F40 /* FILModelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 493D31E7AC895EA5BECB9603 /* FILModelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4563DCE696DE30C636DCD0A7 /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
+		46B87C972E50E9B99754503B /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
 		47A81494EDB893D038ECF35A /* FILModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */; };
-		4BA101A02F1A7DBA00BC925A /* FilamentGltfViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */; };
-		4BA101A12F1A7DBA00BC925A /* FilamentGltfViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */; };
 		638A6D6BBF94F85F01595D80 /* FILView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C2FFFB3DCB45419818692 /* FILView.swift */; };
 		6A69F68398A07A69E320EF24 /* default_env_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */; };
 		720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */; };
+		89788D02EE88B40FD44086D3 /* FilamentGltfViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */; };
 		9F663305E966D1FF430DFC63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE66D3B489F8C0C4FFE550 /* ContentView.swift */; };
 		A0AC7765A24923FBE9884A8B /* FilamentGltfViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB9724CDA8D6E15B72A55892 /* default_env_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */; };
+		DC4082E4F84363EB196D04BF /* FilamentGltfViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E16026926FE5AD4116FD3139 /* FILViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE20D0107B609BC4ADE34079 /* FILViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F02913F47B7E12952191581E /* FilamentGltfViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026ABBEE1F0D62436922EF1 /* FilamentGltfViewerApp.swift */; };
 		F0647A6485969321759F0BBC /* FILSwiftViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1A5AE338B7D09218829CD3 /* FILSwiftViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,13 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4BA101A22F1A7DBA00BC925A /* Embed Frameworks */ = {
+		293887DBDE718F126CBB87CC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4BA101A12F1A7DBA00BC925A /* FilamentGltfViewer.framework in Embed Frameworks */,
+				DC4082E4F84363EB196D04BF /* FilamentGltfViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +63,7 @@
 		697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentGltfViewer.h; sourceTree = "<group>"; };
 		7B143193C66EEC566ACE187D /* default_env_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_env_ibl.ktx; sourceTree = "<group>"; };
 		8026ABBEE1F0D62436922EF1 /* FilamentGltfViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentGltfViewerApp.swift; sourceTree = "<group>"; };
+		8DAF122B76DFB5C3AE336561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AE20D0107B609BC4ADE34079 /* FILViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILViewController.h; sourceTree = "<group>"; };
 		B170E01747E1835FF6F0830C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILViewController.mm; sourceTree = "<group>"; };
@@ -74,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BA101A02F1A7DBA00BC925A /* FilamentGltfViewer.framework in Frameworks */,
+				89788D02EE88B40FD44086D3 /* FilamentGltfViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,7 @@
 			children = (
 				697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */,
 				F01C2FFFB3DCB45419818692 /* FILView.swift */,
+				8DAF122B76DFB5C3AE336561 /* Info.plist */,
 				0C793BB86A4E627402604F36 /* Filament */,
 				4DF4F5956B2E71047738D86E /* Wrapper */,
 			);
@@ -177,7 +182,7 @@
 				BAA8B01A8238D71AF44E4BF1 /* Sources */,
 				A38A16D20F49D31C3DA06110 /* Resources */,
 				C328D45B4BABA68504DB27FA /* Frameworks */,
-				4BA101A22F1A7DBA00BC925A /* Embed Frameworks */,
+				293887DBDE718F126CBB87CC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F12BE87FE4945058451C84F3 /* Assets.xcassets in Resources */,
+				46B87C972E50E9B99754503B /* Scene in Resources */,
+				4563DCE696DE30C636DCD0A7 /* default_env_ibl.ktx in Resources */,
+				DB9724CDA8D6E15B72A55892 /* default_env_skybox.ktx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,10 +336,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../filament/out/ios-debug/filament/include",
 					generated,
 				);
+				INFOPLIST_FILE = FilamentGltfViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,7 +352,7 @@
 					"../filament/out/ios-debug/filament/lib/$(CURRENT_ARCH)",
 					"../filament/out/ios-debug/filament/lib/universal",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = (
 					"-lfilament",
 					"-lbackend",
@@ -368,6 +378,7 @@
 					"-lcivetweb",
 					"-luberzlib",
 				);
+				PRELINK_FLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer.FilamentGltfViewer";
 				PRODUCT_MODULE_NAME = FilamentGltfViewer;
 				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
@@ -545,10 +556,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../filament/out/ios-release/filament/include",
 					generated,
 				);
+				INFOPLIST_FILE = FilamentGltfViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +572,7 @@
 					"../filament/out/ios-release/filament/lib/$(CURRENT_ARCH)",
 					"../filament/out/ios-release/filament/lib/universal",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = (
 					"-lfilament",
 					"-lbackend",
@@ -585,6 +598,7 @@
 					"-lcivetweb",
 					"-luberzlib",
 				);
+				PRELINK_FLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer.FilamentGltfViewer";
 				PRODUCT_MODULE_NAME = FilamentGltfViewer;
 				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
