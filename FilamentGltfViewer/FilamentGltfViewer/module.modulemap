@@ -1,0 +1,4 @@
+module FilamentGltfViewerInternal {
+    header "Wrapper/FILSwiftViewController.h"
+    export *
+}

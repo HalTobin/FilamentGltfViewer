@@ -7,46 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A094A23BC30F113020733B6 /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DAE25C2F281F220A8FCB6 /* FILSwiftViewController.mm */; };
+		05EC2964CCF756CF39704034 /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
+		0918D5AE4A687F28CD86B4C7 /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
+		271050ACAE38635F4BA28F40 /* FILModelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 493D31E7AC895EA5BECB9603 /* FILModelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47A81494EDB893D038ECF35A /* FILModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */; };
+		5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */; };
+		638A6D6BBF94F85F01595D80 /* FILView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C2FFFB3DCB45419818692 /* FILView.swift */; };
+		6A69F68398A07A69E320EF24 /* default_env_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */; };
 		6E2B0669A62D3CFA35B4BD95 /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
+		6E45CFFF2EB7CE85447235B4 /* FilamentGltfViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721AD24C2618A4277D490BB /* FilamentGltfViewer.swift */; };
+		720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */; };
 		7BC1CE8801F7AB953DB5004B /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37C1D73DC281635E084F3493 /* FILViewController.mm */; };
 		855E83F4436CDCAE6A8F11B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA77BC20FCF49E60DEF184 /* ContentView.swift */; };
 		9CDB0641324F5DE937D2E6E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3986332EBF8996D7F88C0B42 /* Assets.xcassets */; };
 		9F663305E966D1FF430DFC63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE66D3B489F8C0C4FFE550 /* ContentView.swift */; };
+		A0AC7765A24923FBE9884A8B /* FilamentGltfViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC1B9449AB3DB1211FA9D2F9 /* default_env_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */; };
 		B41FBCAD5310310FC4FA2ED9 /* FilamentGltfViewerAppStandaloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F0C8C57224AB9CBACB833 /* FilamentGltfViewerAppStandaloneApp.swift */; };
+		BF954D164E9D01F5DA7275BE /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 861894E9696DEB1A2713758D /* FILSwiftViewController.mm */; };
 		C8B8DA8247A789B0906D9111 /* FILModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C8416E44DE3B99A1131A9 /* FILModelView.mm */; };
 		DE2BA7DA3B9345279614688A /* FILView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF943D1C2F47951BC8F755BC /* FILView.swift */; };
+		E16026926FE5AD4116FD3139 /* FILViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE20D0107B609BC4ADE34079 /* FILViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC2C52EF75044E497BDEC30C /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
 		F02913F47B7E12952191581E /* FilamentGltfViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026ABBEE1F0D62436922EF1 /* FilamentGltfViewerApp.swift */; };
+		F0647A6485969321759F0BBC /* FILSwiftViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1A5AE338B7D09218829CD3 /* FILSwiftViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F12BE87FE4945058451C84F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25475AFA10FADEEC2D82A62 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		046A385E962FF6FCC2CFFB12 /* FilamentGltfViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FilamentGltfViewer-Bridging-Header.h"; sourceTree = "<group>"; };
-		0E4DAE25C2F281F220A8FCB6 /* FILSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILSwiftViewController.mm; sourceTree = "<group>"; };
+		15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILModelView.mm; sourceTree = "<group>"; };
+		2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilamentGltfViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C1D73DC281635E084F3493 /* FILViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILViewController.mm; sourceTree = "<group>"; };
 		3986332EBF8996D7F88C0B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		427F60EE2C618019B29B8148 /* FILSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILSwiftViewController.h; sourceTree = "<group>"; };
-		46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentGltfViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FilamentGltfViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4721AD24C2618A4277D490BB /* FilamentGltfViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentGltfViewer.swift; sourceTree = "<group>"; };
+		493D31E7AC895EA5BECB9603 /* FILModelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILModelView.h; sourceTree = "<group>"; };
 		54CE66D3B489F8C0C4FFE550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5896D72346431E2489D2614C /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILSwiftViewController.mm; sourceTree = "<group>"; };
 		5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_env_skybox.ktx; sourceTree = "<group>"; };
+		697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentGltfViewer.h; sourceTree = "<group>"; };
 		7B143193C66EEC566ACE187D /* default_env_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_env_ibl.ktx; sourceTree = "<group>"; };
 		8026ABBEE1F0D62436922EF1 /* FilamentGltfViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentGltfViewerApp.swift; sourceTree = "<group>"; };
 		820DD2259D2B1089B890DB13 /* FILModelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILModelView.h; sourceTree = "<group>"; };
+		861894E9696DEB1A2713758D /* FILSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILSwiftViewController.mm; sourceTree = "<group>"; };
 		955F0C8C57224AB9CBACB833 /* FilamentGltfViewerAppStandaloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentGltfViewerAppStandaloneApp.swift; sourceTree = "<group>"; };
 		9E1C8416E44DE3B99A1131A9 /* FILModelView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILModelView.mm; sourceTree = "<group>"; };
+		AE20D0107B609BC4ADE34079 /* FILViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILViewController.h; sourceTree = "<group>"; };
 		B170E01747E1835FF6F0830C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BAE20AA56AB47711FCB86449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFAA77BC20FCF49E60DEF184 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C19A0519552731A819B02397 /* FilamentGltfViewerAppStandalone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentGltfViewerAppStandalone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF943D1C2F47951BC8F755BC /* FILView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FILView.swift; sourceTree = "<group>"; };
+		CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILViewController.mm; sourceTree = "<group>"; };
 		DDC778B9563DDEA3F0E8F8CB /* FILViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILViewController.h; sourceTree = "<group>"; };
+		DF1A5AE338B7D09218829CD3 /* FILSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILSwiftViewController.h; sourceTree = "<group>"; };
 		E25475AFA10FADEEC2D82A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F01C2FFFB3DCB45419818692 /* FILView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FILView.swift; sourceTree = "<group>"; };
 		FEFF3F279CEA5B3BA808B017 /* Scene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scene; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0C793BB86A4E627402604F36 /* Filament */ = {
+			isa = PBXGroup;
+			children = (
+				493D31E7AC895EA5BECB9603 /* FILModelView.h */,
+				15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */,
+				AE20D0107B609BC4ADE34079 /* FILViewController.h */,
+				CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */,
+			);
+			path = Filament;
+			sourceTree = "<group>";
+		};
 		2AF7BD456A3CF8594C156FE5 /* Filament */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +92,20 @@
 			path = Filament;
 			sourceTree = "<group>";
 		};
+		4DF4F5956B2E71047738D86E /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A5AE338B7D09218829CD3 /* FILSwiftViewController.h */,
+				5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
 		56384815A5509D1C8256B249 /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
 				427F60EE2C618019B29B8148 /* FILSwiftViewController.h */,
-				0E4DAE25C2F281F220A8FCB6 /* FILSwiftViewController.mm */,
+				861894E9696DEB1A2713758D /* FILSwiftViewController.mm */,
 			);
 			path = Wrapper;
 			sourceTree = "<group>";
@@ -72,10 +115,24 @@
 			children = (
 				FEFF3F279CEA5B3BA808B017 /* Scene */,
 				AA2DF69F35290F7058E33C24 /* default_env */,
+				9C18ACAD1BFA10F6A3F5E312 /* FilamentGltfViewer */,
 				C4505F83731D340357741E9C /* FilamentGltfViewerApp */,
 				F3A13CE1C32043AEBC851F76 /* FilamentGltfViewerAppStandalone */,
 				DB4CAF2B16FCA31EEA9F0CBC /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		9C18ACAD1BFA10F6A3F5E312 /* FilamentGltfViewer */ = {
+			isa = PBXGroup;
+			children = (
+				697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */,
+				4721AD24C2618A4277D490BB /* FilamentGltfViewer.swift */,
+				F01C2FFFB3DCB45419818692 /* FILView.swift */,
+				5896D72346431E2489D2614C /* module.modulemap */,
+				0C793BB86A4E627402604F36 /* Filament */,
+				4DF4F5956B2E71047738D86E /* Wrapper */,
+			);
+			path = FilamentGltfViewer;
 			sourceTree = "<group>";
 		};
 		AA2DF69F35290F7058E33C24 /* default_env */ = {
@@ -102,6 +159,7 @@
 		DB4CAF2B16FCA31EEA9F0CBC /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */,
 				46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */,
 				C19A0519552731A819B02397 /* FilamentGltfViewerAppStandalone.app */,
 			);
@@ -124,6 +182,20 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6B1190E9794E7F3EF56B8162 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271050ACAE38635F4BA28F40 /* FILModelView.h in Headers */,
+				F0647A6485969321759F0BBC /* FILSwiftViewController.h in Headers */,
+				E16026926FE5AD4116FD3139 /* FILViewController.h in Headers */,
+				A0AC7765A24923FBE9884A8B /* FilamentGltfViewer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2862CC327FA713D78D22FB43 /* FilamentGltfViewerAppStandalone */ = {
@@ -163,6 +235,26 @@
 			productReference = 46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		72BABD94194A4CDAD102ADC4 /* FilamentGltfViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B81679FFAE2ECE42AF9E879 /* Build configuration list for PBXNativeTarget "FilamentGltfViewer" */;
+			buildPhases = (
+				8AF7A20DD67642814DD09AE8 /* Build Filament Resources */,
+				6B1190E9794E7F3EF56B8162 /* Headers */,
+				66A45ADF16A778793769EB19 /* Sources */,
+				398FC644C2B56C2D2C7B89AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilamentGltfViewer;
+			packageProductDependencies = (
+			);
+			productName = FilamentGltfViewer;
+			productReference = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +277,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				72BABD94194A4CDAD102ADC4 /* FilamentGltfViewer */,
 				359701A193D84C0B5AA9A8B5 /* FilamentGltfViewerApp */,
 				2862CC327FA713D78D22FB43 /* FilamentGltfViewerAppStandalone */,
 			);
@@ -200,6 +293,16 @@
 				6E2B0669A62D3CFA35B4BD95 /* Scene in Resources */,
 				EC2C52EF75044E497BDEC30C /* default_env_ibl.ktx in Resources */,
 				AC1B9449AB3DB1211FA9D2F9 /* default_env_skybox.ktx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		398FC644C2B56C2D2C7B89AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0918D5AE4A687F28CD86B4C7 /* Scene in Resources */,
+				05EC2964CCF756CF39704034 /* default_env_ibl.ktx in Resources */,
+				6A69F68398A07A69E320EF24 /* default_env_skybox.ktx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +338,27 @@
 			shellPath = /bin/sh;
 			shellScript = "#/usr/bin/env/bash\n\nset -e\n\n# Compile resources.\n\n# The gltf-viewer app requires two resources:\n# 1. The IBL image\n# 2. The skybox image\n\nHOST_TOOLS_PATH=\"${HOST_TOOLS_PATH:-../filament/out/release/filament/bin}\"\n\ncmgen_path=`find ${HOST_TOOLS_PATH} -name cmgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/default_env\" \\\n    --format=ktx --size=256 --extract-blur=0.1 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/lightroom_14b.hdr\"";
 		};
+		8AF7A20DD67642814DD09AE8 /* Build Filament Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/../filament/third_party/environments/lightroom_14b.hdr",
+			);
+			name = "Build Filament Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(PROJECT_DIR)/generated/default_env/default_env_ibl.ktx",
+				"$(PROJECT_DIR)/generated/default_env/default_env_skybox.ktx",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#/usr/bin/env/bash\n\nset -e\n\n# Compile resources.\n\n# The gltf-viewer app requires two resources:\n# 1. The IBL image\n# 2. The skybox image\n\nHOST_TOOLS_PATH=\"${HOST_TOOLS_PATH:-../filament/out/release/filament/bin}\"\n\ncmgen_path=`find ${HOST_TOOLS_PATH} -name cmgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/default_env\" \\\n    --format=ktx --size=256 --extract-blur=0.1 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/lightroom_14b.hdr\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -244,10 +368,22 @@
 			files = (
 				855E83F4436CDCAE6A8F11B1 /* ContentView.swift in Sources */,
 				C8B8DA8247A789B0906D9111 /* FILModelView.mm in Sources */,
-				3A094A23BC30F113020733B6 /* FILSwiftViewController.mm in Sources */,
+				BF954D164E9D01F5DA7275BE /* FILSwiftViewController.mm in Sources */,
 				DE2BA7DA3B9345279614688A /* FILView.swift in Sources */,
 				7BC1CE8801F7AB953DB5004B /* FILViewController.mm in Sources */,
 				B41FBCAD5310310FC4FA2ED9 /* FilamentGltfViewerAppStandaloneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66A45ADF16A778793769EB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A81494EDB893D038ECF35A /* FILModelView.mm in Sources */,
+				720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */,
+				638A6D6BBF94F85F01595D80 /* FILView.swift in Sources */,
+				5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */,
+				6E45CFFF2EB7CE85447235B4 /* FilamentGltfViewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +399,72 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		310AEF8FC94FEE1162ECF983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				HEADER_SEARCH_PATHS = (
+					"../filament/out/ios-debug/filament/include",
+					generated,
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../filament/out/ios-debug/filament/lib/$(CURRENT_ARCH)",
+					"../filament/out/ios-debug/filament/lib/universal",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = FilamentGltfViewer/module.modulemap;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "c++20 gnu17";
+				OTHER_LDFLAGS = (
+					"-lfilament",
+					"-lbackend",
+					"-lfilaflat",
+					"-lktxreader",
+					"-lfilabridge",
+					"-lutils",
+					"-lsmol-v",
+					"-lgeometry",
+					"-libl",
+					"-labseil",
+					"-lzstd",
+					"-lgltfio_core",
+					"-luberarchive",
+					"-limage",
+					"-lstb",
+					"-lbasis_transcoder",
+					"-lzstd",
+					"-lcamutils",
+					"-ldracodec",
+					"-lmeshoptimizer",
+					"-lviewer",
+					"-lcivetweb",
+					"-luberzlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer.FilamentGltfViewer";
+				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
 		31A0748589974DC24579AFA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -385,7 +587,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = F4UP4UW7SU;
 				INFOPLIST_FILE = FilamentGltfViewerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,7 +604,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = F4UP4UW7SU;
 				INFOPLIST_FILE = FilamentGltfViewerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,6 +728,72 @@
 			};
 			name = Debug;
 		};
+		EC316990CE3C1C8F6C5A0A64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				HEADER_SEARCH_PATHS = (
+					"../filament/out/ios-release/filament/include",
+					generated,
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../filament/out/ios-release/filament/lib/$(CURRENT_ARCH)",
+					"../filament/out/ios-release/filament/lib/universal",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = FilamentGltfViewer/module.modulemap;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "c++20 gnu17";
+				OTHER_LDFLAGS = (
+					"-lfilament",
+					"-lbackend",
+					"-lfilaflat",
+					"-lktxreader",
+					"-lfilabridge",
+					"-lutils",
+					"-lsmol-v",
+					"-lgeometry",
+					"-libl",
+					"-labseil",
+					"-lzstd",
+					"-lgltfio_core",
+					"-luberarchive",
+					"-limage",
+					"-lstb",
+					"-lbasis_transcoder",
+					"-lzstd",
+					"-lcamutils",
+					"-ldracodec",
+					"-lmeshoptimizer",
+					"-lviewer",
+					"-lcivetweb",
+					"-luberzlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${SAMPLE_CODE_DISAMBIGUATOR}.moineaufactory.filamentgltfviewer.FilamentGltfViewer";
+				SAMPLE_CODE_DISAMBIGUATOR = "${DEVELOPMENT_TEAM}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,6 +802,15 @@
 			buildConfigurations = (
 				AE9B9C0F639606A373EE847C /* Debug */,
 				B22292521E69649B9E5418EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5B81679FFAE2ECE42AF9E879 /* Build configuration list for PBXNativeTarget "FilamentGltfViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310AEF8FC94FEE1162ECF983 /* Debug */,
+				EC316990CE3C1C8F6C5A0A64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
