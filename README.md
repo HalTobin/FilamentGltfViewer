@@ -9,6 +9,8 @@ It can currently be exported as an .xcframework and then imported in your Xcode 
 
 Only compatible with physical iOS devices (no Simulator).
 
+This work is mostly based on the *gltf-viewer* code sample available on the filament's repository: [https://github.com/google/filament/tree/main/ios/samples/gltf-viewer](https://github.com/google/filament/tree/main/ios/samples/gltf-viewer)
+
 ### Export the framework
 1. Open your terminal at the parent's folder of the Xcode project FilamentGltfViewer, this folder will be referenced as the *workspace*
 2. Clone filament's repository: `git clone https://github.com/google/filament.git`
