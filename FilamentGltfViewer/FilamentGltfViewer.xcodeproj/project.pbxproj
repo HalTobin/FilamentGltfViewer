@@ -14,6 +14,19 @@
 		4563DCE696DE30C636DCD0A7 /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
 		46B87C972E50E9B99754503B /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
 		47A81494EDB893D038ECF35A /* FILModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */; };
+		4B1EA6A42F471BE700BA6B5A /* FilamentGltfArView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6A32F471BE700BA6B5A /* FilamentGltfArView.swift */; };
+		4B1EA6AF2F471C2E00BA6B5A /* FilamentApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6A72F471C2E00BA6B5A /* FilamentApp.h */; };
+		4B1EA6B02F471C2E00BA6B5A /* FullScreenTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6AD2F471C2E00BA6B5A /* FullScreenTriangle.h */; };
+		4B1EA6B12F471C2E00BA6B5A /* MathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6AE2F471C2E00BA6B5A /* MathHelpers.h */; };
+		4B1EA6B22F471C2E00BA6B5A /* FilamentArViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6A82F471C2E00BA6B5A /* FilamentArViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B1EA6B32F471C2E00BA6B5A /* FilamentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6AA2F471C2E00BA6B5A /* FilamentView.h */; };
+		4B1EA6B42F471C2E00BA6B5A /* FilamentApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6A62F471C2E00BA6B5A /* FilamentApp.cpp */; };
+		4B1EA6B52F471C2E00BA6B5A /* FilamentArViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6A92F471C2E00BA6B5A /* FilamentArViewController.mm */; };
+		4B1EA6B62F471C2E00BA6B5A /* FullScreenTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6AC2F471C2E00BA6B5A /* FullScreenTriangle.cpp */; };
+		4B1EA6B72F471C2E00BA6B5A /* FilamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6AB2F471C2E00BA6B5A /* FilamentView.m */; };
+		4B1EA6C22F47259C00BA6B5A /* Resources.S in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6C12F47259C00BA6B5A /* Resources.S */; };
+		4B1EA6C52F4729CD00BA6B5A /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */; };
+		4B1EA6C82F4729F900BA6B5A /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1EA6C72F4729F900BA6B5A /* ARKit.framework */; };
 		4B75258B2F22395400793C0D /* ModelTapHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B75258A2F22394A00793C0D /* ModelTapHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */; };
 		720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */; };
@@ -66,6 +79,29 @@
 		2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilamentGltfViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentGltfViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493D31E7AC895EA5BECB9603 /* FILModelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILModelView.h; sourceTree = "<group>"; };
+		4B1EA69F2F471BE000BA6B5A /* camera_feed.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = camera_feed.mat; sourceTree = "<group>"; };
+		4B1EA6A02F471BE000BA6B5A /* clear_coat.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = clear_coat.mat; sourceTree = "<group>"; };
+		4B1EA6A12F471BE000BA6B5A /* shadow_plane.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = shadow_plane.mat; sourceTree = "<group>"; };
+		4B1EA6A32F471BE700BA6B5A /* FilamentGltfArView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentGltfArView.swift; sourceTree = "<group>"; };
+		4B1EA6A62F471C2E00BA6B5A /* FilamentApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FilamentApp.cpp; sourceTree = "<group>"; };
+		4B1EA6A72F471C2E00BA6B5A /* FilamentApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentApp.h; sourceTree = "<group>"; };
+		4B1EA6A82F471C2E00BA6B5A /* FilamentArViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentArViewController.h; sourceTree = "<group>"; };
+		4B1EA6A92F471C2E00BA6B5A /* FilamentArViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentArViewController.mm; sourceTree = "<group>"; };
+		4B1EA6AA2F471C2E00BA6B5A /* FilamentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentView.h; sourceTree = "<group>"; };
+		4B1EA6AB2F471C2E00BA6B5A /* FilamentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilamentView.m; sourceTree = "<group>"; };
+		4B1EA6AC2F471C2E00BA6B5A /* FullScreenTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FullScreenTriangle.cpp; sourceTree = "<group>"; };
+		4B1EA6AD2F471C2E00BA6B5A /* FullScreenTriangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenTriangle.h; sourceTree = "<group>"; };
+		4B1EA6AE2F471C2E00BA6B5A /* MathHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathHelpers.h; sourceTree = "<group>"; };
+		4B1EA6B82F471CC500BA6B5A /* resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resources.h; sourceTree = "<group>"; };
+		4B1EA6B92F471CC500BA6B5A /* resources.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = resources.bin; sourceTree = "<group>"; };
+		4B1EA6BA2F471CC500BA6B5A /* resources.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = resources.S; sourceTree = "<group>"; };
+		4B1EA6BB2F471CC500BA6B5A /* resources.apple.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = resources.apple.S; sourceTree = "<group>"; };
+		4B1EA6BC2F471F6F00BA6B5A /* sh.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sh.txt; sourceTree = "<group>"; };
+		4B1EA6BD2F471F6F00BA6B5A /* venetian_crossroads_2k_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_ibl.ktx; sourceTree = "<group>"; };
+		4B1EA6BE2F471F6F00BA6B5A /* venetian_crossroads_2k_skybox.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_skybox.ktx; sourceTree = "<group>"; };
+		4B1EA6C12F47259C00BA6B5A /* Resources.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = Resources.S; sourceTree = "<group>"; };
+		4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		4B1EA6C72F4729F900BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/iOSSupport/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
 		4B75258A2F22394A00793C0D /* ModelTapHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTapHandler.h; sourceTree = "<group>"; };
 		54CE66D3B489F8C0C4FFE550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58D557BC45119A2F48A7439F /* ModelPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPlaceholder.swift; sourceTree = "<group>"; };
@@ -91,10 +127,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B1EA6C62F4729F100BA6B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1EA6C82F4729F900BA6B5A /* ARKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C328D45B4BABA68504DB27FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1EA6C52F4729CD00BA6B5A /* ARKit.framework in Frameworks */,
 				89788D02EE88B40FD44086D3 /* FilamentGltfViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,12 +150,71 @@
 		0C793BB86A4E627402604F36 /* Filament */ = {
 			isa = PBXGroup;
 			children = (
+				4B1EA6A52F471C1A00BA6B5A /* Ar */,
 				493D31E7AC895EA5BECB9603 /* FILModelView.h */,
 				15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */,
 				AE20D0107B609BC4ADE34079 /* FILViewController.h */,
 				CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */,
 			);
 			path = Filament;
+			sourceTree = "<group>";
+		};
+		4B1EA6A22F471BE000BA6B5A /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				4B1EA6BF2F471F6F00BA6B5A /* venetian_crossroads_2k */,
+				4B1EA6B82F471CC500BA6B5A /* resources.h */,
+				4B1EA6B92F471CC500BA6B5A /* resources.bin */,
+				4B1EA6BA2F471CC500BA6B5A /* resources.S */,
+				4B1EA6BB2F471CC500BA6B5A /* resources.apple.S */,
+				4B1EA69F2F471BE000BA6B5A /* camera_feed.mat */,
+				4B1EA6A02F471BE000BA6B5A /* clear_coat.mat */,
+				4B1EA6A12F471BE000BA6B5A /* shadow_plane.mat */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		4B1EA6A52F471C1A00BA6B5A /* Ar */ = {
+			isa = PBXGroup;
+			children = (
+				4B1EA6A62F471C2E00BA6B5A /* FilamentApp.cpp */,
+				4B1EA6A72F471C2E00BA6B5A /* FilamentApp.h */,
+				4B1EA6A82F471C2E00BA6B5A /* FilamentArViewController.h */,
+				4B1EA6A92F471C2E00BA6B5A /* FilamentArViewController.mm */,
+				4B1EA6AA2F471C2E00BA6B5A /* FilamentView.h */,
+				4B1EA6AB2F471C2E00BA6B5A /* FilamentView.m */,
+				4B1EA6AC2F471C2E00BA6B5A /* FullScreenTriangle.cpp */,
+				4B1EA6AD2F471C2E00BA6B5A /* FullScreenTriangle.h */,
+				4B1EA6AE2F471C2E00BA6B5A /* MathHelpers.h */,
+			);
+			path = Ar;
+			sourceTree = "<group>";
+		};
+		4B1EA6BF2F471F6F00BA6B5A /* venetian_crossroads_2k */ = {
+			isa = PBXGroup;
+			children = (
+				4B1EA6BC2F471F6F00BA6B5A /* sh.txt */,
+				4B1EA6BD2F471F6F00BA6B5A /* venetian_crossroads_2k_ibl.ktx */,
+				4B1EA6BE2F471F6F00BA6B5A /* venetian_crossroads_2k_skybox.ktx */,
+			);
+			path = venetian_crossroads_2k;
+			sourceTree = "<group>";
+		};
+		4B1EA6C02F47259000BA6B5A /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4B1EA6C12F47259C00BA6B5A /* Resources.S */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		4B1EA6C32F4729CC00BA6B5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B1EA6C72F4729F900BA6B5A /* ARKit.framework */,
+				4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4DF4F5956B2E71047738D86E /* Wrapper */ = {
@@ -130,13 +234,17 @@
 				9C18ACAD1BFA10F6A3F5E312 /* FilamentGltfViewer */,
 				C4505F83731D340357741E9C /* FilamentGltfViewerApp */,
 				DB4CAF2B16FCA31EEA9F0CBC /* Products */,
+				4B1EA6C32F4729CC00BA6B5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		9C18ACAD1BFA10F6A3F5E312 /* FilamentGltfViewer */ = {
 			isa = PBXGroup;
 			children = (
+				4B1EA6C02F47259000BA6B5A /* SupportFiles */,
+				4B1EA6A22F471BE000BA6B5A /* Materials */,
 				66735B2824C65D3CB14E5DE0 /* FilamentGltfView.swift */,
+				4B1EA6A32F471BE700BA6B5A /* FilamentGltfArView.swift */,
 				697580B0B59141D8593E6EC3 /* FilamentGltfViewer.h */,
 				8DAF122B76DFB5C3AE336561 /* Info.plist */,
 				EAAB339FAF89D140872A895B /* Data */,
@@ -200,11 +308,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1EA6B22F471C2E00BA6B5A /* FilamentArViewController.h in Headers */,
 				271050ACAE38635F4BA28F40 /* FILModelView.h in Headers */,
 				F0647A6485969321759F0BBC /* FILSwiftViewController.h in Headers */,
 				E16026926FE5AD4116FD3139 /* FILViewController.h in Headers */,
 				A0AC7765A24923FBE9884A8B /* FilamentGltfViewer.h in Headers */,
 				A05C99C9802C8A57C832FFA6 /* FilamentModel.h in Headers */,
+				4B1EA6AF2F471C2E00BA6B5A /* FilamentApp.h in Headers */,
+				4B1EA6B02F471C2E00BA6B5A /* FullScreenTriangle.h in Headers */,
+				4B1EA6B12F471C2E00BA6B5A /* MathHelpers.h in Headers */,
+				4B1EA6B32F471C2E00BA6B5A /* FilamentView.h in Headers */,
 				B5D2F22AE0715EBA3604B325 /* FilamentScene.h in Headers */,
 				4B75258B2F22395400793C0D /* ModelTapHandler.h in Headers */,
 				1CFB92596393209E47608BE8 /* ModelOffset.h in Headers */,
@@ -242,6 +355,7 @@
 				8AF7A20DD67642814DD09AE8 /* Build Filament Resources */,
 				6B1190E9794E7F3EF56B8162 /* Headers */,
 				66A45ADF16A778793769EB19 /* Sources */,
+				4B1EA6C62F4729F100BA6B5A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/usr/bin/env/bash\n\nset -e\n\n# Compile resources.\n\n# The gltf-viewer app requires two resources:\n# 1. The IBL image\n# 2. The skybox image\n\nHOST_TOOLS_PATH=\"${HOST_TOOLS_PATH:-../filament/out/release/filament/bin}\"\n\ncmgen_path=`find ${HOST_TOOLS_PATH} -name cmgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/default_env\" \\\n    --format=ktx --size=256 --extract-blur=0.1 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/lightroom_14b.hdr\"";
+			shellScript = "#/usr/bin/env/bash\n\nset -e\n\n# Compile resources.\n\nHOST_TOOLS_PATH=\"${HOST_TOOLS_PATH:-../filament/out/release/filament/bin}\"\n\n# The gltf-viewer app requires two resources:\n# 1. The IBL image\n# 2. The skybox image\n\ncmgen_path=`find ${HOST_TOOLS_PATH} -name cmgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/default_env\" \\\n    --format=ktx --size=256 --extract-blur=0.1 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/lightroom_14b.hdr\"\n\n\n\n\n\n# The hello-ar app requires four resources:\n# 1. The cube mesh\n# 2. The Filament material definition\n# 3. The Filament camera feed material definition\n# 4. The Filament shadow plane material definition\n# 5. The IBL image\n# These will be compiled into the final binary via the resgen tool.\n\nfilamesh_path=`find ${HOST_TOOLS_PATH} -name filamesh -type f | head -n 1`\nmatc_path=`find ${HOST_TOOLS_PATH} -name matc -type f | head -n 1`\nresgen_path=`find ${HOST_TOOLS_PATH} -name resgen -type f | head -n 1`\n\n# Ensure that the required tools are present in the out/ directory.\n# These can be built by running ./build.sh -p desktop -i release at Filament's root directory.\n\nif [[ ! -e \"${filamesh_path}\" ]]; then\n  echo \"No filamesh binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\nif [[ ! -e \"${matc_path}\" ]]; then\n  echo \"No matc binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\nif [[ ! -e \"${resgen_path}\" ]]; then\n  echo \"No resgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\nif [[ ! -e \"${cmgen_path}\" ]]; then\n  echo \"No cmgen binary could be found in ${HOST_TOOLS_PATH}.\"\n  echo \"Ensure Filament has been built/installed before building this app.\"\n  exit 1\nfi\n\n# The filamesh tool converts the .obj file into a Filament-specific filamesh file that has been\n# optimized for loading into Filament.\nmkdir -p \"${PROJECT_DIR}/generated/\"\n\"${filamesh_path}\" \\\n    \"${PROJECT_DIR}/../filament/assets/models/rounded_cube/rounded_cube.obj\" \\\n    \"${PROJECT_DIR}/generated/cube.filamesh\"\n\n# The matc tool compiles the clear_coat.mat, shadow_plane.mat, and camera_feed.mat materials into\n# Filament material BLOBs.\n\n\"${matc_path}\" \\\n    --api all \\\n    --platform mobile \\\n    -o \"${PROJECT_DIR}/generated/clear_coat.filamat\" \\\n    \"${PROJECT_DIR}/FilamentGltfViewer/Materials/clear_coat.mat\"\n\n\"${matc_path}\" \\\n    --api all \\\n    --platform mobile \\\n    -o \"${PROJECT_DIR}/generated/shadow_plane.filamat\" \\\n    \"${PROJECT_DIR}/FilamentGltfViewer/Materials/shadow_plane.mat\"\n\n\"${matc_path}\" \\\n    --api all \\\n    --platform mobile \\\n    -o \"${PROJECT_DIR}/generated/camera_feed.filamat\" \\\n    \"${PROJECT_DIR}/FilamentGltfViewer/Materials/camera_feed.mat\"\n\n# cmgen consumes an HDR environment map and generates two mipmapped KTX files (IBL and skybox)\n\"${cmgen_path}\" \\\n    --quiet \\\n    --deploy=\"${PROJECT_DIR}/generated/venetian_crossroads_2k\" \\\n    --format=ktx --size=256 \\\n    \"${PROJECT_DIR}/../filament/third_party/environments/venetian_crossroads_2k.hdr\"\n\n# The resgen tool generates an assembly file, resources.apple.S that gets compiled and linked\n# into the final binary. It contains all the resources consumed by the app.\n\"${resgen_path}\" \\\n    --deploy=\"${PROJECT_DIR}/generated\" \\\n    \"${PROJECT_DIR}/generated/cube.filamesh\" \\\n    \"${PROJECT_DIR}/generated/clear_coat.filamat\" \\\n    \"${PROJECT_DIR}/generated/shadow_plane.filamat\" \\\n    \"${PROJECT_DIR}/generated/camera_feed.filamat\" \\\n    \"${PROJECT_DIR}/generated/venetian_crossroads_2k/venetian_crossroads_2k_ibl.ktx\"\n\n# FilamentApp.cpp and Resources.S include files generated by resgen.\n# Touch them to force Xcode to recompile.\ntouch \"${PROJECT_DIR}/FilamentGltfViewer/Filament/Ar/FullScreenTriangle.cpp\"\ntouch \"${PROJECT_DIR}/FilamentGltfViewer/Filament/Ar/FilamentApp.cpp\"\ntouch \"${PROJECT_DIR}/FilamentGltfViewer/SupportFiles/Resources.S\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -329,7 +443,13 @@
 				720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */,
 				5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */,
 				D8454A2EBE594F95B7B466CE /* FilamentGltfView.swift in Sources */,
+				4B1EA6B42F471C2E00BA6B5A /* FilamentApp.cpp in Sources */,
+				4B1EA6B52F471C2E00BA6B5A /* FilamentArViewController.mm in Sources */,
+				4B1EA6B62F471C2E00BA6B5A /* FullScreenTriangle.cpp in Sources */,
+				4B1EA6C22F47259C00BA6B5A /* Resources.S in Sources */,
+				4B1EA6B72F471C2E00BA6B5A /* FilamentView.m in Sources */,
 				11B8B1914894DB5B55F94D3E /* FilamentModel.m in Sources */,
+				4B1EA6A42F471BE700BA6B5A /* FilamentGltfArView.swift in Sources */,
 				A8CB04D34B9789C0299281A1 /* FilamentScene.m in Sources */,
 				ADA8AC6257012FA0914CADEF /* ModelOffset.m in Sources */,
 			);
@@ -408,6 +528,7 @@
 					"-lzstd",
 					"-lcamutils",
 					"-ldracodec",
+					"-lfilameshio",
 					"-lmeshoptimizer",
 					"-lviewer",
 					"-lcivetweb",
@@ -629,6 +750,7 @@
 					"-lzstd",
 					"-lcamutils",
 					"-ldracodec",
+					"-lfilameshio",
 					"-lmeshoptimizer",
 					"-lviewer",
 					"-lcivetweb",

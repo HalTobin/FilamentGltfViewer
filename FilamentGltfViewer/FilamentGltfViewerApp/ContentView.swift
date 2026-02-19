@@ -6,6 +6,8 @@ struct ContentView: View {
     @State var modelSelectionSheet: Bool = false
     @State var currentModel: FilamentModel? = ModelPlaceholder.models.first
     
+    @State var mode: ViewerMode = ViewerMode.classical
+    
     private let models = ModelPlaceholder.models
     
     var body: some View {
@@ -15,13 +17,24 @@ struct ContentView: View {
                 envSkyboxPath: EnvironmentLight.skybox,
                 envIblPath: EnvironmentLight.ibl
             )
-            FilamentGltfView(
-                scene: scene,
-                model: currentModel,
-                onModelTap: { model in
-                    print("onTap(): \(model?.name ?? "nil")")
+            ZStack {
+                switch (mode) {
+                case .classical: FilamentGltfView(
+                    scene: scene,
+                    model: currentModel,
+                    onModelTap: { model in
+                        print("onTap(): \(model?.name ?? "nil")")
+                    }
+                )
+                case .ar: FilamentGltfArView(
+                    scene: scene,
+                    model: currentModel,
+                    onModelTap: { model in
+                        print("onTap(): \(model?.name ?? "nil")")
+                    }
+                )
                 }
-            )
+            }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .sheet(isPresented: $modelSelectionSheet) {
@@ -35,19 +48,53 @@ struct ContentView: View {
                 )
             }
             
-            Button(
-                "Select a model",
-                systemImage: "arkit",
-                action: {
-                    withAnimation { modelSelectionSheet = true }
-                }
-            )
-            .padding()
-            .buttonStyle(.borderedProminent)
+            HStack {
+                Button(
+                    "Select a model",
+                    systemImage: "arkit",
+                    action: {
+                        withAnimation { modelSelectionSheet = true }
+                    }
+                )
+                .padding()
+                .buttonStyle(.borderedProminent)
+                
+                Spacer()
+                
+                Button(
+                    "Viewer Mode",
+                    systemImage: mode.systemImage,
+                    action: changeViewerMode
+                )
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .labelStyle(.iconOnly)
+            }
             
         }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private func changeViewerMode() {
+        switch (mode) {
+        case .classical: mode = .ar
+        case .ar: mode = .classical
+        }
+    }
+}
+
+enum ViewerMode {
+    case classical
+    case ar
+}
+
+extension ViewerMode {
+    var systemImage: String {
+        return switch self {
+        case .classical: "cube.transparent.fill"
+        case .ar: "arkit"
+        }
     }
 }
 

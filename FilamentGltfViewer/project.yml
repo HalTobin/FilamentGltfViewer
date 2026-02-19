@@ -47,7 +47,7 @@ targets:
         OTHER_LDFLAGS: ["-lfilament", "-lbackend", "-lfilaflat", "-lktxreader",
                         "-lfilabridge", "-lutils", "-lsmol-v", "-lgeometry", "-libl",
                         "-labseil", "-lzstd", "-lgltfio_core", "-luberarchive", "-limage", "-lstb", "-lbasis_transcoder",
-                        "-lzstd", "-lcamutils", "-ldracodec", "-lmeshoptimizer", "-lviewer", "-lcivetweb",
+                        "-lzstd", "-lcamutils", "-ldracodec", "-lfilameshio", "-lmeshoptimizer", "-lviewer", "-lcivetweb",
                         "-luberzlib"]
         SWIFT_INSTALL_OBJC_HEADER: NO 
         #MACH_O_TYPE: staticlib
