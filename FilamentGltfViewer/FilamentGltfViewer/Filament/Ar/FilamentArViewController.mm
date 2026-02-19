@@ -96,14 +96,14 @@
     // UIInterfaceOrientationLandscapeRight orientation (landscape, home button on the right-hand
     // side).
     CGRect nativeBounds = [[UIScreen mainScreen] nativeBounds];
-    CGSize viewport = CGSizeMake(nativeBounds.size.height, nativeBounds.size.width);
+    CGSize viewport = CGSizeMake(nativeBounds.size.width, nativeBounds.size.height);
 
     // This transform gets applied to the UV coordinates of the full-screen triangle used to render
     // the camera feed. We want the inverse because we're applying the transform to the UV
     // coordinates, not the image itself.
     // (See camera_feed.mat and FullScreenTriangle.cpp)
     CGAffineTransform displayTransform =
-            [frame displayTransformForOrientation:UIInterfaceOrientationLandscapeRight
+            [frame displayTransformForOrientation:UIInterfaceOrientationPortrait
                                      viewportSize:viewport];
     CGAffineTransform transformInv = CGAffineTransformInvert(displayTransform);
     mat3f textureTransform(transformInv.a, transformInv.b, 0,
@@ -111,18 +111,18 @@
                            transformInv.tx, transformInv.ty, 1);
 
     const auto& projection =
-            [frame.camera projectionMatrixForOrientation:UIInterfaceOrientationLandscapeRight
+            [frame.camera projectionMatrixForOrientation:UIInterfaceOrientationPortrait
                                             viewportSize:viewport
                                                    zNear: 0.01f
                                                     zFar:10.00f];
 
-    // frame.camera.transform gives a camera transform matrix assuming a landscape-right orientation.
-    // For simplicity, the app's orientation is locked to UIInterfaceOrientationLandscapeRight.
+    auto viewMatrix = [frame.camera viewMatrixForOrientation:UIInterfaceOrientationPortrait];
+    auto cameraTransformMatrix = simd_inverse(viewMatrix);
     app->render(FilamentApp::FilamentArFrame {
         .cameraImage = (void*) frame.capturedImage,
         .cameraTextureTransform = textureTransform,
         .projection = FILAMENT_MAT4_FROM_SIMD(projection),
-        .view = FILAMENT_MAT4F_FROM_SIMD(frame.camera.transform)
+        .view = FILAMENT_MAT4F_FROM_SIMD(cameraTransformMatrix)
     });
 }
 
