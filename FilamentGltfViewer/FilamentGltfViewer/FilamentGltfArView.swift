@@ -18,15 +18,13 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
     }
     
     public func makeUIViewController(context: Context) -> UIViewController {
-        /*let viewController = FILSwiftViewController(
+        let viewController = FILARSwiftViewController(
             scene: scene,
             onModelTap: { onModelTap($0) }
         )
         if let safeModel = model {
             viewController.load(safeModel)
         }
-        return viewController*/
-        let viewController = FilamentArViewController()
         return viewController
     }
     

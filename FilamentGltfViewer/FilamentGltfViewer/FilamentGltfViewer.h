@@ -5,4 +5,4 @@
 #import <FilamentGltfViewer/ModelTapHandler.h>
 
 #import <FilamentGltfViewer/FILSwiftViewController.h>
-#import <FilamentGltfViewer/FilamentArViewController.h>
+#import <FilamentGltfViewer/FILARSwiftViewController.h>

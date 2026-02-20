@@ -50,11 +50,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.contentScaleFactor = [UIScreen mainScreen].nativeScale;
 
+    CAMetalLayer *metalLayer = (CAMetalLayer *)self.view.layer;
     CGRect nativeBounds = [[UIScreen mainScreen] nativeBounds];
+    metalLayer.drawableSize = nativeBounds.size;
+
     uint32_t nativeWidth = (uint32_t) nativeBounds.size.width;
     uint32_t nativeHeight = (uint32_t) nativeBounds.size.height;
-    app = new FilamentApp((__bridge void*) self.view.layer, nativeWidth, nativeHeight);
+    app = new FilamentApp((__bridge void*) metalLayer, nativeWidth, nativeHeight);
 
     self.session = [ARSession new];
     self.session.delegate = self;

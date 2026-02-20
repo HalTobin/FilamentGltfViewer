@@ -27,6 +27,8 @@
 		4B1EA6C22F47259C00BA6B5A /* Resources.S in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6C12F47259C00BA6B5A /* Resources.S */; };
 		4B1EA6C52F4729CD00BA6B5A /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */; };
 		4B1EA6C82F4729F900BA6B5A /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1EA6C72F4729F900BA6B5A /* ARKit.framework */; };
+		4B1EA6CF2F4874BC00BA6B5A /* FILARSwiftViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6CD2F4874BC00BA6B5A /* FILARSwiftViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B1EA6D02F4874BC00BA6B5A /* FILARSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6CE2F4874BC00BA6B5A /* FILARSwiftViewController.mm */; };
 		4B75258B2F22395400793C0D /* ModelTapHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B75258A2F22394A00793C0D /* ModelTapHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */; };
 		720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */; };
@@ -102,6 +104,8 @@
 		4B1EA6C12F47259C00BA6B5A /* Resources.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = Resources.S; sourceTree = "<group>"; };
 		4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		4B1EA6C72F4729F900BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/iOSSupport/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
+		4B1EA6CD2F4874BC00BA6B5A /* FILARSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILARSwiftViewController.h; sourceTree = "<group>"; };
+		4B1EA6CE2F4874BC00BA6B5A /* FILARSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILARSwiftViewController.mm; sourceTree = "<group>"; };
 		4B75258A2F22394A00793C0D /* ModelTapHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTapHandler.h; sourceTree = "<group>"; };
 		54CE66D3B489F8C0C4FFE550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58D557BC45119A2F48A7439F /* ModelPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPlaceholder.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 			children = (
 				DF1A5AE338B7D09218829CD3 /* FILSwiftViewController.h */,
 				5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */,
+				4B1EA6CD2F4874BC00BA6B5A /* FILARSwiftViewController.h */,
+				4B1EA6CE2F4874BC00BA6B5A /* FILARSwiftViewController.mm */,
 			);
 			path = Wrapper;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				B5D2F22AE0715EBA3604B325 /* FilamentScene.h in Headers */,
 				4B75258B2F22395400793C0D /* ModelTapHandler.h in Headers */,
 				1CFB92596393209E47608BE8 /* ModelOffset.h in Headers */,
+				4B1EA6CF2F4874BC00BA6B5A /* FILARSwiftViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +450,7 @@
 				720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */,
 				5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */,
 				D8454A2EBE594F95B7B466CE /* FilamentGltfView.swift in Sources */,
+				4B1EA6D02F4874BC00BA6B5A /* FILARSwiftViewController.mm in Sources */,
 				4B1EA6B42F471C2E00BA6B5A /* FilamentApp.cpp in Sources */,
 				4B1EA6B52F471C2E00BA6B5A /* FilamentArViewController.mm in Sources */,
 				4B1EA6B62F471C2E00BA6B5A /* FullScreenTriangle.cpp in Sources */,

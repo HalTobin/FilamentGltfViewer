@@ -35,8 +35,8 @@ struct ContentView: View {
                 )
                 }
             }
-            .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea()
             .sheet(isPresented: $modelSelectionSheet) {
                 ModelSelector(
                     models: models,
@@ -70,17 +70,13 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .labelStyle(.iconOnly)
             }
+            .padding(.top, 6)
             
         }
-        .ignoresSafeArea()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private func changeViewerMode() {
-        switch (mode) {
-        case .classical: mode = .ar
-        case .ar: mode = .classical
-        }
+        mode = (mode == .classical) ? .ar : .classical
     }
 }
 
