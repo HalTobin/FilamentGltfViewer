@@ -51,11 +51,13 @@ FullScreenTriangle::FullScreenTriangle(Engine* engine) : mEngine(engine) {
 }
 
 FullScreenTriangle::~FullScreenTriangle() {
+    mEngine->destroy(mCameraFeedTriangle);
+
+    mEngine->destroy(mMaterial);
+
     mEngine->destroy(mCameraFeedTexture);
     mEngine->destroy(mIndexBuffer);
     mEngine->destroy(mVertexBuffer);
-    mEngine->destroy(mMaterial);
-    mEngine->destroy(mCameraFeedTriangle);
 }
 
 void FullScreenTriangle::createRenderable() {

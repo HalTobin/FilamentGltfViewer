@@ -7,7 +7,7 @@ targets:
     platform: iOS
     SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
     SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.6"
     sources:
       - path: FilamentGltfViewerApp
       - path: 'FilamentGltfViewerApp/Assets.xcassets'

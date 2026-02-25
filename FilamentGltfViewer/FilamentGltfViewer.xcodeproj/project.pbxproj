@@ -30,6 +30,7 @@
 		4B1EA6CF2F4874BC00BA6B5A /* FILARSwiftViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6CD2F4874BC00BA6B5A /* FILARSwiftViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B1EA6D02F4874BC00BA6B5A /* FILARSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6CE2F4874BC00BA6B5A /* FILARSwiftViewController.mm */; };
 		4B75258B2F22395400793C0D /* ModelTapHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B75258A2F22394A00793C0D /* ModelTapHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B97E1B72F4F2FD70026E3E3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E1B62F4F2FD50026E3E3 /* ModelView.swift */; };
 		5375E3FFD94F511BC6F987CA /* FILViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFB33E7D2F4BF7CC90AAE6E7 /* FILViewController.mm */; };
 		720E8CB262CDAFD580CEB4AB /* FILSwiftViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */; };
 		89788D02EE88B40FD44086D3 /* FilamentGltfViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */; };
@@ -107,6 +108,7 @@
 		4B1EA6CD2F4874BC00BA6B5A /* FILARSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILARSwiftViewController.h; sourceTree = "<group>"; };
 		4B1EA6CE2F4874BC00BA6B5A /* FILARSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILARSwiftViewController.mm; sourceTree = "<group>"; };
 		4B75258A2F22394A00793C0D /* ModelTapHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTapHandler.h; sourceTree = "<group>"; };
+		4B97E1B62F4F2FD50026E3E3 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		54CE66D3B489F8C0C4FFE550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58D557BC45119A2F48A7439F /* ModelPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPlaceholder.swift; sourceTree = "<group>"; };
 		5CB03D97492273477F9E83D3 /* FILSwiftViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FILSwiftViewController.mm; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 		C4505F83731D340357741E9C /* FilamentGltfViewerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4B97E1B62F4F2FD50026E3E3 /* ModelView.swift */,
 				E25475AFA10FADEEC2D82A62 /* Assets.xcassets */,
 				54CE66D3B489F8C0C4FFE550 /* ContentView.swift */,
 				24CCC68A2FBDDB0443ACFA06 /* EnvironmentLight.swift */,
@@ -467,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B97E1B72F4F2FD70026E3E3 /* ModelView.swift in Sources */,
 				9F663305E966D1FF430DFC63 /* ContentView.swift in Sources */,
 				C7A3E570A1BC8E95966468EF /* EnvironmentLight.swift in Sources */,
 				F02913F47B7E12952191581E /* FilamentGltfViewerApp.swift in Sources */,
@@ -679,7 +683,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = F4UP4UW7SU;
 				INFOPLIST_FILE = FilamentGltfViewerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,7 +701,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = F4UP4UW7SU;
 				INFOPLIST_FILE = FilamentGltfViewerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

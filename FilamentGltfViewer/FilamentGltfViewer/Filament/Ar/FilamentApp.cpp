@@ -173,22 +173,35 @@ void FilamentApp::updatePlaneGeometry(const FilamentArPlaneGeometry& geometry) {
 FilamentApp::~FilamentApp() {
     delete app.cameraFeedTriangle;
 
-    engine->destroy(app.materialInstance);
-    engine->destroy(app.mat);
-    engine->destroy(app.indirectLight);
-    engine->destroy(app.iblTexture);
     engine->destroy(app.renderable);
     engine->destroy(app.sun);
+
+    if (!app.planeGeometry.isNull()) {
+        engine->destroy(app.planeGeometry);
+        EntityManager::get().destroy(app.planeGeometry);
+    }
+
+    engine->destroy(app.materialInstance);
+    engine->destroy(app.mat);
     engine->destroy(app.shadowPlane);
+
+    engine->destroy(app.indirectLight);
+    engine->destroy(app.iblTexture);
+
+    if (app.planeVertices) engine->destroy(app.planeVertices);
+    if (app.planeIndices) engine->destroy(app.planeIndices);
 
     engine->destroy(renderer);
     engine->destroy(scene);
     engine->destroy(view);
+
     Entity c = camera->getEntity();
     engine->destroyCameraComponent(c);
     EntityManager::get().destroy(c);
+
     engine->destroy(swapChain);
-    engine->destroy(&engine);
+
+    Engine::destroy(&engine);
 }
 
 void FilamentApp::setupFilament() {
