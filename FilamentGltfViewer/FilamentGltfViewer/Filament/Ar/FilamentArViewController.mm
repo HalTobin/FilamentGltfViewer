@@ -15,12 +15,14 @@
  */
 
 #import "FilamentArViewController.h"
-
 #import "FilamentApp.h"
-
 #import "FilamentView.h"
 
 #import "MathHelpers.h"
+
+#import <FilamentGltfViewer/FilamentScene.h>
+#import <FilamentGltfViewer/FilamentModel.h>
+#import <FilamentGltfViewer/ModelTapHandler.h>
 
 #import <ARKit/ARKit.h>
 
@@ -41,7 +43,29 @@
 
 @end
 
-@implementation FilamentArViewController
+@implementation FilamentArViewController {
+    FilamentScene* _scene;
+    FilamentModel* _model;
+    ModelTapHandler _onModelTapCallback;
+}
+
+- (instancetype)initWithScene:(FilamentScene *)scene {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _scene = scene;
+    }
+    return self;
+}
+
+- (instancetype)initWithScene:(FilamentScene *)scene
+                   onModelTap:(ModelTapHandler)onModelTap {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _scene = scene;
+        _onModelTapCallback = [onModelTap copy];
+    }
+    return self;
+}
 
 - (void)loadView {
     self.view = [[FilamentView alloc] init];
@@ -91,6 +115,31 @@
 - (void)dealloc
 {
     delete app;
+}
+
+- (bool)loadModel:(FilamentModel *)model {
+    if (app == nullptr) {
+        NSLog(@"Filament engine not initialized yet. Deferring model load.");
+        _model = model; // Store it to load once viewDidLoad finishes
+        return true;
+    }
+
+    if (model == nil || model.url == nil) return false;
+
+    @try {
+        NSData* data = [NSData dataWithContentsOfFile:model.url.path];
+        if (!data) return false;
+
+        app->loadModel((const uint8_t*)data.bytes, (uint32_t)data.length);
+        return true;
+    }
+    @catch (NSException *exception) {
+        return false;
+    }
+}
+
+- (void)unloadModel {
+    app->unloadModel();
 }
 
 #pragma mark ARSessionDelegate
@@ -152,6 +201,11 @@
     simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(objectTransform);
     self.anchor = [[ARAnchor alloc] initWithName:@"object" transform:simd_transform];
     [self.session addAnchor:self.anchor];
+    
+    // For detecting tap on the displayed model
+    /*if (_onModelTapCallback != nil && _model != nil) {
+        _onModelTapCallback(_model);
+    }*/
 }
 
 - (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor*>*)anchors

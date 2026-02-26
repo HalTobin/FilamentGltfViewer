@@ -28,6 +28,8 @@
 #include <geometry/SurfaceOrientation.h>
 #include <ktxreader/Ktx1Reader.h>
 
+#include <gltfio/materials/uberarchive.h>
+
 #include <sstream>
 
 // This file is generated via the "Run Script" build phase and contains the mesh, materials, and IBL
@@ -55,6 +57,24 @@ void FilamentApp::render(const FilamentArFrame& frame) {
     camera->setModelMatrix(frame.view);
     camera->setCustomProjection(frame.projection, 0.01, 10);
 
+    // Update animation
+    if (app.animator) {
+        static auto startTime = std::chrono::steady_clock::now();
+        auto now = std::chrono::steady_clock::now();
+        float elapsed = std::chrono::duration<float>(now - startTime).count();
+        if (app.animator->getAnimationCount() > 0) {
+            app.animator->applyAnimation(0, elapsed);
+        }
+        app.animator->updateBoneMatrices();
+    }
+
+    // Apply AR transform to the glTF asset root
+    if (app.asset) {
+        auto& tcm = engine->getTransformManager();
+        auto i = tcm.getInstance(app.asset->getRoot());
+        tcm.setTransform(i, meshTransform * mat4f::scaling(OBJECT_SCALE));
+    }
+    
     // Rotate the mesh a little bit each frame.
     meshRotation *= quatf::fromAxisAngle(float3{1.0f, 0.5f, 0.2f}, 0.05);
 
@@ -170,7 +190,60 @@ void FilamentApp::updatePlaneGeometry(const FilamentArPlaneGeometry& geometry) {
     scene->addEntity(app.planeGeometry);
 }
 
+bool FilamentApp::loadModel(const uint8_t* data, uint32_t size) {
+    unloadModel();
+
+    if (!app.assetLoader) return false;
+
+    app.asset = app.assetLoader->createAsset(data, size);
+    if (!app.asset) return false;
+
+    app.resourceLoader->loadResources(app.asset);
+    app.animator = app.asset->getInstance()->getAnimator();
+    scene->addEntities(app.asset->getEntities(), app.asset->getEntityCount());
+
+    // Hide the cube safely
+    if (!app.renderable.isNull()) {
+        auto& rcm = engine->getRenderableManager();
+        auto instance = rcm.getInstance(app.renderable);
+        if (instance) {
+            rcm.setLayerMask(instance, 0xff, 0x00); // Invisible
+        }
+    }
+    return true;
+}
+
+void FilamentApp::unloadModel() {
+    if (app.asset != nullptr) {
+        scene->removeEntities(app.asset->getEntities(), app.asset->getEntityCount());
+        
+        if (app.assetLoader != nullptr) {
+            app.assetLoader->destroyAsset(app.asset);
+        }
+        app.asset = nullptr;
+        app.animator = nullptr;
+    }
+    
+    if (!app.renderable.isNull()) {
+        auto& rcm = engine->getRenderableManager();
+        auto instance = rcm.getInstance(app.renderable);
+        if (instance) {
+            rcm.setLayerMask(instance, 0xff, 0xff); // Visible
+        }
+    }
+}
+
 FilamentApp::~FilamentApp() {
+    unloadModel();
+    
+    delete app.resourceLoader;
+    AssetLoader::destroy(&app.assetLoader);
+        
+    if (app.materialProvider) {
+        app.materialProvider->destroyMaterials();
+        delete app.materialProvider;
+    }
+    
     delete app.cameraFeedTriangle;
 
     engine->destroy(app.renderable);
@@ -212,6 +285,8 @@ void FilamentApp::setupFilament() {
     Entity c = EntityManager::get().create();
     camera = engine->createCamera(c);
     camera->setProjection(60, (float) width / height, 0.1, 10);
+    
+    setupGltf();
 }
 
 void FilamentApp::setupIbl() {
@@ -262,6 +337,22 @@ void FilamentApp::setupMesh() {
     tcm.setTransform(i,
             mat4f::translation(float3{0.0f, 0.0f, -2.0f}) *
             mat4f::scaling(OBJECT_SCALE));
+}
+
+void FilamentApp::setupGltf() {
+    app.materialProvider = createUbershaderProvider(
+        engine,
+        UBERARCHIVE_DEFAULT_DATA,
+        UBERARCHIVE_DEFAULT_SIZE
+    );
+    app.assetLoader = AssetLoader::create({engine, app.materialProvider});
+    app.resourceLoader = new ResourceLoader({.engine = engine, .normalizeSkinningWeights = true});
+    app.stbDecoder = createStbProvider(engine);
+    app.ktxDecoder = createKtx2Provider(engine);
+    
+    app.resourceLoader->addTextureProvider("image/png", app.stbDecoder);
+    app.resourceLoader->addTextureProvider("image/jpeg", app.stbDecoder);
+    app.resourceLoader->addTextureProvider("image/ktx2", app.ktxDecoder);
 }
 
 void FilamentApp::setupView() {

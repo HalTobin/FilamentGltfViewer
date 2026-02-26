@@ -4,28 +4,23 @@
 #import <FilamentGltfViewer/ModelTapHandler.h>
 
 @implementation FILARSwiftViewController {
-    // We use FilamentArViewController as the internal implementation
     FilamentArViewController* _impl;
-    id _model;
+    FilamentModel* _model;
 }
 
 - (instancetype)initWithScene:(FilamentScene *)scene {
     self = [super init];
     if (self) {
-        // Ensure we always use the AR-capable controller
-        _impl = [[FilamentArViewController alloc] init];
-        // Note: FilamentArViewController.mm currently doesn't have a custom initWithScene,
-        // so we use the default init and can pass scene data if you extend it later.
+        _impl = [[FilamentArViewController alloc] initWithScene:scene];
     }
     return self;
 }
 
 - (instancetype)initWithScene:(FilamentScene *)scene
                    onModelTap:(ModelTapHandler)onModelTap {
-    self = [self initWithScene:scene];
+    self = [super init];
     if (self) {
-        // Placeholder for onModelTap logic if FilamentArViewController is updated
-        // to support tap callbacks similar to FILViewController.
+        _impl = [[FilamentArViewController alloc] initWithScene:scene onModelTap:onModelTap];
     }
     return self;
 }
@@ -33,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // standard VC containment setup
     [self addChildViewController:_impl];
     _impl.view.frame = self.view.bounds;
     _impl.view.autoresizingMask =
@@ -42,28 +36,19 @@
     [self.view addSubview:_impl.view];
     [_impl didMoveToParentViewController:self];
     
-    // Future-proofing: Load model if it was set before view was loaded
     if (_model != nil) {
-        [self loadModel:_model];
+        [_impl loadModel:_model];
     }
 }
 
-- (bool)loadModel:(id)model {
+- (bool)loadModel:(FilamentModel *)model {
     _model = model;
-    // FilamentArViewController currently lacks loadModel:
-    // This check prevents crashes while you work on the implementation.
-    if ([_impl respondsToSelector:@selector(loadModel:)]) {
-        return [(id)_impl loadModel:model];
-    }
-    return false;
+    return [_impl loadModel:model];
 }
 
 - (void)unloadModel {
     _model = nil;
-    // Future-proofing for when you add unload logic to FilamentArViewController
-    if ([_impl respondsToSelector:@selector(unloadModel)]) {
-        [(id)_impl unloadModel];
-    }
+    [_impl unloadModel];
 }
 
 @end

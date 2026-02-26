@@ -26,12 +26,18 @@
 #include <filament/TransformManager.h>
 #include <filament/View.h>
 
+#include <gltfio/AssetLoader.h>
+#include <gltfio/ResourceLoader.h>
+#include <gltfio/TextureProvider.h>
+#include <gltfio/Animator.h>
+
 #include <utils/EntityManager.h>
 
 #include "FullScreenTriangle.h"
 
 using namespace filament;
 using namespace filament::math;
+using namespace filament::gltfio;
 using utils::Entity;
 using utils::EntityManager;
 
@@ -62,6 +68,10 @@ public:
     };
 
     void updatePlaneGeometry(const FilamentArPlaneGeometry& geometry);
+    
+    //void loadModelFromAsset(FilamentAsset* asset);
+    bool loadModel(const uint8_t* data, uint32_t size);
+    void unloadModel();
 
 private:
 
@@ -69,6 +79,7 @@ private:
     void setupIbl();
     void setupMaterial();
     void setupMesh();
+    void setupGltf();
     void setupView();
     void setupCameraFeedTriangle();
 
@@ -99,6 +110,14 @@ private:
         IndexBuffer* planeIndices = nullptr;
         Entity planeGeometry;
         Material* shadowPlane = nullptr;
+        
+        MaterialProvider* materialProvider = nullptr;
+        AssetLoader* assetLoader = nullptr;
+        ResourceLoader* resourceLoader = nullptr;
+        TextureProvider* stbDecoder = nullptr;
+        TextureProvider* ktxDecoder = nullptr;
+        FilamentAsset* asset = nullptr;
+        gltfio::Animator* animator = nullptr;
     } app;
 
 };
