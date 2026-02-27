@@ -51,4 +51,11 @@
     [_impl unloadModel];
 }
 
+- (UIImage *)captureSnapshot {
+    if (_impl) {
+        return [_impl captureSnapshot];
+    }
+    return nil;
+}
+
 @end

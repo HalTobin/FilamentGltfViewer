@@ -172,6 +172,20 @@
     app->unloadModel();
 }
 
+- (UIImage *)captureSnapshot {
+    UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat new];
+    format.opaque = YES;
+    
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:self.view.bounds.size format:format];
+    
+    UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull context) {
+        // drawViewHierarchyInRect safely captures the Metal layer and SwiftUI overlays
+        [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
+    }];
+    
+    return image;
+}
+
 #pragma mark ARSessionDelegate
 
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame

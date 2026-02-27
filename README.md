@@ -26,6 +26,7 @@ This work is mostly based on:
 5. An usable .xcframework will be generated at *{WORKSPACE}/out/FilamentGltfViewer.xcframework*
 
 #### TODO
+- Callback to track if a model is currently visible in AR view
 - Separate into multiple frameworks: Base (if necessary), 3DViewer, AR - will allow to remove dependency on ARKit for 3D only projects
 - API for customising light sources
 - SPM implementation

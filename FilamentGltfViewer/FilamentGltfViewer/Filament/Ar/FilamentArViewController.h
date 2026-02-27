@@ -36,4 +36,6 @@
 
 - (void)unloadModel;
 
+- (UIImage *)captureSnapshot;
+
 @end
