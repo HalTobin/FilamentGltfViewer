@@ -47,7 +47,6 @@ FilamentApp::FilamentApp(void* nativeLayer, uint32_t width, uint32_t height)
     setupCameraFeedTriangle();
     setupIbl();
     setupMaterial();
-    setupMesh();
     setupView();
 }
 
@@ -316,27 +315,6 @@ void FilamentApp::setupMaterial() {
         .package(RESOURCES_CLEAR_COAT_DATA, RESOURCES_CLEAR_COAT_SIZE)
         .build(*engine);
     app.materialInstance = app.mat->createInstance();
-}
-
-void FilamentApp::setupMesh() {
-    MeshReader::Mesh mesh = MeshReader::loadMeshFromBuffer(engine, RESOURCES_CUBE_DATA,
-            nullptr, nullptr, app.materialInstance);
-    app.materialInstance->setParameter("baseColor", RgbType::sRGB, {0.71f, 0.0f, 0.0f});
-
-    app.renderable = mesh.renderable;
-    scene->addEntity(app.renderable);
-
-    // Allow the mesh to cast shadows onto the shadow plane.
-    auto& rcm = engine->getRenderableManager();
-    rcm.setCastShadows(rcm.getInstance(app.renderable), true);
-
-    // Position the mesh 2 units down the Z axis.
-    auto& tcm = engine->getTransformManager();
-    tcm.create(app.renderable);
-    auto i = tcm.getInstance(app.renderable);
-    tcm.setTransform(i,
-            mat4f::translation(float3{0.0f, 0.0f, -2.0f}) *
-            mat4f::scaling(OBJECT_SCALE));
 }
 
 void FilamentApp::setupGltf() {

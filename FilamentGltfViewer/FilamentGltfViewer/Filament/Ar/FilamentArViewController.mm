@@ -85,6 +85,9 @@
     uint32_t nativeHeight = (uint32_t) nativeBounds.size.height;
     app = new FilamentApp((__bridge void*) metalLayer, nativeWidth, nativeHeight);
 
+    // Not a beautiful fix, but it should do it for now
+    app->setObjectTransform(mat4f::translation(float3{0.f, -1000.f, 0.f}));
+    
     self.session = [ARSession new];
     self.session.delegate = self;
 
@@ -94,6 +97,33 @@
 
     tapRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapRecognizer];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+// MARK: - Orientation Transitions
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    // Quickly fade out the AR camera feed right before the rotation begins
+    [UIView animateWithDuration:0.1 animations:^{
+        self.view.alpha = 0.0;
+    }];
+    
+    // Wait for the system's rotation animation to finish
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+
+        // Fade the camera feed back in.
+        [UIView animateWithDuration:0.2 animations:^{
+            self.view.alpha = 1.0;
+        }];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -146,18 +176,21 @@
 
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
 {
-    // The height and width are flipped for the viewport because we're requesting transforms in the
-    // UIInterfaceOrientationLandscapeRight orientation (landscape, home button on the right-hand
-    // side).
-    CGRect nativeBounds = [[UIScreen mainScreen] nativeBounds];
-    CGSize viewport = CGSizeMake(nativeBounds.size.width, nativeBounds.size.height);
+    UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
+    UIWindowScene *windowScene = (UIWindowScene *)self.view.window.windowScene;
+    if (windowScene) {
+        orientation = windowScene.interfaceOrientation;
+    }
+    
+    // Fallback if unknown
+    if (orientation == UIInterfaceOrientationUnknown) {
+        orientation = UIInterfaceOrientationPortrait;
+    }
 
-    // This transform gets applied to the UV coordinates of the full-screen triangle used to render
-    // the camera feed. We want the inverse because we're applying the transform to the UV
-    // coordinates, not the image itself.
-    // (See camera_feed.mat and FullScreenTriangle.cpp)
+    CGSize viewport = self.view.bounds.size;
+
     CGAffineTransform displayTransform =
-            [frame displayTransformForOrientation:UIInterfaceOrientationPortrait
+            [frame displayTransformForOrientation:orientation
                                      viewportSize:viewport];
     CGAffineTransform transformInv = CGAffineTransformInvert(displayTransform);
     mat3f textureTransform(transformInv.a, transformInv.b, 0,
@@ -165,13 +198,14 @@
                            transformInv.tx, transformInv.ty, 1);
 
     const auto& projection =
-            [frame.camera projectionMatrixForOrientation:UIInterfaceOrientationPortrait
+            [frame.camera projectionMatrixForOrientation:orientation
                                             viewportSize:viewport
                                                    zNear: 0.01f
                                                     zFar:10.00f];
 
-    auto viewMatrix = [frame.camera viewMatrixForOrientation:UIInterfaceOrientationPortrait];
+    auto viewMatrix = [frame.camera viewMatrixForOrientation:orientation];
     auto cameraTransformMatrix = simd_inverse(viewMatrix);
+    
     app->render(FilamentApp::FilamentArFrame {
         .cameraImage = (void*) frame.capturedImage,
         .cameraTextureTransform = textureTransform,
@@ -182,30 +216,71 @@
 
 - (void)handleTap:(UITapGestureRecognizer*)sender
 {
-    if (self.anchor) {
-        [self.session removeAnchor:self.anchor];
-    }
-
     ARFrame* currentFrame = self.session.currentFrame;
     if (!currentFrame) {
         return;
     }
-
-    // Create a transform 0.2 meters in front of the camera.
-    mat4f viewTransform = FILAMENT_MAT4F_FROM_SIMD(currentFrame.camera.transform);
-    mat4f objectTranslation = mat4f::translation(float3{0.f, 0.f, -.2f});
-    mat4f objectTransform = viewTransform * objectTranslation;
-
-    app->setObjectTransform(objectTransform);
-
-    simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(objectTransform);
-    self.anchor = [[ARAnchor alloc] initWithName:@"object" transform:simd_transform];
-    [self.session addAnchor:self.anchor];
     
-    // For detecting tap on the displayed model
-    /*if (_onModelTapCallback != nil && _model != nil) {
-        _onModelTapCallback(_model);
-    }*/
+    UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
+    UIWindowScene *windowScene = (UIWindowScene *)self.view.window.windowScene;
+    if (windowScene) {
+        orientation = windowScene.interfaceOrientation;
+    }
+    if (orientation == UIInterfaceOrientationUnknown) {
+        orientation = UIInterfaceOrientationPortrait;
+    }
+
+    CGPoint tapLocation = [sender locationInView:self.view];
+    CGSize viewSize = self.view.bounds.size;
+
+    // Check if the user's tapped on an already displayed object
+    if (self.anchor) {
+        simd_float3 modelPosition = self.anchor.transform.columns[3].xyz;
+        CGPoint projectedPoint = [currentFrame.camera projectPoint:modelPosition
+                                                               orientation:orientation
+                                                              viewportSize:viewSize];
+        
+        CGFloat distance = hypot(tapLocation.x - projectedPoint.x, tapLocation.y - projectedPoint.y);
+        if (distance < 80.0) {
+            if (_onModelTapCallback != nil && _model != nil) {
+                _onModelTapCallback(_model);
+            }
+            return;
+        }
+    }
+    
+    CGPoint normalizedPoint = CGPointMake(tapLocation.x / viewSize.width,
+                                          tapLocation.y / viewSize.height);
+
+    // Convert the normalized screen point to the camera's image coordinate space
+    CGAffineTransform displayTransform =
+            [currentFrame displayTransformForOrientation:orientation
+                                            viewportSize:viewSize];
+    CGPoint imagePoint = CGPointApplyAffineTransform(normalizedPoint, CGAffineTransformInvert(displayTransform));
+
+    // Perform a hit test against detected planes (like tables) and estimated planes
+    NSArray<ARHitTestResult *> *results = [currentFrame hitTest:imagePoint
+                                                          types:ARHitTestResultTypeExistingPlaneUsingExtent |
+                                                                ARHitTestResultTypeEstimatedHorizontalPlane];
+
+    if (results.count > 0) {
+        // Remove the previous anchor if it exists
+        if (self.anchor) {
+            [self.session removeAnchor:self.anchor];
+        }
+
+        ARHitTestResult *result = results.firstObject;
+        mat4f hitTransform = FILAMENT_MAT4F_FROM_SIMD(result.worldTransform);
+        
+        // Extract ONLY the translation to keep the model perfectly upright, avoiding ground slopes
+        mat4f uprightTransform = mat4f::translation(hitTransform[3].xyz);
+
+        app->setObjectTransform(uprightTransform);
+
+        simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(uprightTransform);
+        self.anchor = [[ARAnchor alloc] initWithName:@"object" transform:simd_transform];
+        [self.session addAnchor:self.anchor];
+    }
 }
 
 - (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor*>*)anchors

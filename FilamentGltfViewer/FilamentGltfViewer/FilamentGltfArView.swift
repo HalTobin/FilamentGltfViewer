@@ -29,7 +29,7 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
     }
     
     public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        if let viewController = uiViewController as? FILSwiftViewController {
+        if let viewController = uiViewController as? FILARSwiftViewController {
             viewController.unloadModel()
             if let safeModel = model {
                 viewController.load(safeModel)

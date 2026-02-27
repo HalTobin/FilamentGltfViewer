@@ -5,6 +5,8 @@ This is a Work In Progress:
 
 # Presentation
 FilamentGLTFViewer is a simple project to load and display .glb and .gltf on ios.
+The library includes a classic 3D viewer as well as an AR viewer.
+
 It can currently be exported as an .xcframework and then imported in your Xcode project.
 
 Only compatible with physical iOS devices (no Simulator).
@@ -25,7 +27,6 @@ This work is mostly based on:
 
 #### TODO
 - Separate into multiple frameworks: Base (if necessary), 3DViewer, AR - will allow to remove dependency on ARKit for 3D only projects
-- Support for AR (Work in progress)
 - API for customising light sources
 - SPM implementation
 - Basic documentation
