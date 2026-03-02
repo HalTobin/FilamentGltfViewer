@@ -8,6 +8,7 @@ struct ModelView: View {
     @State private var mode: ViewerMode = ViewerMode.classical
     
     @State private var captureSnapshot: Bool = false
+    @State private var arObjectVisible: Bool = false
     
     private let models = ModelPlaceholder.models
     
@@ -38,8 +39,17 @@ struct ModelView: View {
                         onSnapshotCaptured: { image in
                             print("Image captured!")
                             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        },
+                        onModelVisibilityUpdate: { visible in
+                            print("Model visibility updated: \(visible)")
+                            withAnimation { arObjectVisible = visible }
                         }
                     )
+                    
+                    if !arObjectVisible {
+                        placeArObjectHint
+                    }
+                    
                     snapshotButton
                         .padding(.bottom, 36)
                 }
@@ -85,6 +95,19 @@ struct ModelView: View {
         }
     }
     
+    private var placeArObjectHint: some View {
+        VStack {
+            Spacer()
+            Text("Tap on a flat surface to place the model")
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            Spacer()
+        }
+        .allowsHitTesting(false)
+    }
+    
     private var snapshotButton: some View {
         Button(
             action: { captureSnapshot = true },
@@ -109,6 +132,7 @@ struct ModelView: View {
     
     private func changeViewerMode() {
         mode = (mode == .classical) ? .ar : .classical
+        arObjectVisible = false
     }
     
 }

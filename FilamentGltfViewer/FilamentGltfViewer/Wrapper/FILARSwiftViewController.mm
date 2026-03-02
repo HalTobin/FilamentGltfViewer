@@ -58,4 +58,11 @@
     return nil;
 }
 
+- (void)setOnModelVisibilityUpdate:(ModelVisibilityHandler)onModelVisibilityUpdate {
+    _onModelVisibilityUpdate = onModelVisibilityUpdate;
+    if (_impl) {
+        _impl.onModelVisibilityUpdate = onModelVisibilityUpdate;
+    }
+}
+
 @end

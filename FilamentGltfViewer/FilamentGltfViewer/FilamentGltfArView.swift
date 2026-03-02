@@ -10,18 +10,22 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
     @Binding var takeSnapshot: Bool
     private let onSnapshotCaptured: ((UIImage) -> Void)?
     
+    private let onModelVisibilityUpdate: ((Bool) -> Void)?
+    
     public init(
         scene: FilamentScene,
         model: FilamentModel?,
         onModelTap: @escaping (FilamentModel?) -> Void = { model in },
         takeSnapshot: Binding<Bool> = .constant(false),
         onSnapshotCaptured: ((UIImage) -> Void)? = nil,
+        onModelVisibilityUpdate: ((Bool) -> Void)? = nil
     ) {
         self.scene = scene
         self.model = model
         self.onModelTap = onModelTap
         self._takeSnapshot = takeSnapshot
         self.onSnapshotCaptured = onSnapshotCaptured
+        self.onModelVisibilityUpdate = onModelVisibilityUpdate
     }
     
     public func makeUIViewController(context: Context) -> UIViewController {
@@ -29,6 +33,12 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
             scene: scene,
             onModelTap: { onModelTap($0) }
         )
+        viewController.onModelVisibilityUpdate = { isVisible in
+            DispatchQueue.main.async {
+                self.onModelVisibilityUpdate?(isVisible)
+            }
+        }
+        
         if let safeModel = model {
             viewController.load(safeModel)
         }

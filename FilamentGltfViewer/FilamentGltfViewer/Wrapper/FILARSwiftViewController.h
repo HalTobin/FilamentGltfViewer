@@ -5,6 +5,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^ModelVisibilityHandler)(BOOL visible);
+
 @interface FILARSwiftViewController : UIViewController
 
 - (instancetype)initWithScene:(FilamentScene *)scene NS_DESIGNATED_INITIALIZER;
@@ -17,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)unloadModel;
 
 - (UIImage * _Nullable)captureSnapshot;
+
+@property (nonatomic, copy) ModelVisibilityHandler onModelVisibilityUpdate;
 
 @end
 

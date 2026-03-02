@@ -20,6 +20,8 @@
 #import <FilamentGltfViewer/FilamentModel.h>
 #import <FilamentGltfViewer/ModelTapHandler.h>
 
+typedef void (^ModelVisibilityHandler)(BOOL visible);
+
 @interface FilamentArViewController : UIViewController
 
 - (instancetype _Nonnull )initWithScene:(nonnull FilamentScene *)scene NS_DESIGNATED_INITIALIZER;
@@ -37,5 +39,7 @@
 - (void)unloadModel;
 
 - (UIImage *)captureSnapshot;
+
+@property (nonatomic, copy) ModelVisibilityHandler onModelVisibilityUpdate;
 
 @end

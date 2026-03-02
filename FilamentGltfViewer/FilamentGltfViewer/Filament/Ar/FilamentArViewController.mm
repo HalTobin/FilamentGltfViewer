@@ -46,6 +46,7 @@
 @implementation FilamentArViewController {
     FilamentScene* _scene;
     FilamentModel* _model;
+    BOOL _isModelVisible;
     ModelTapHandler _onModelTapCallback;
 }
 
@@ -69,6 +70,13 @@
 
 - (void)loadView {
     self.view = [[FilamentView alloc] init];
+    
+    if (_isModelVisible) {
+        _isModelVisible = NO;
+        if (self.onModelVisibilityUpdate) {
+            self.onModelVisibilityUpdate(NO);
+        }
+    }
 }
 
 - (void)viewDidLoad
@@ -170,6 +178,13 @@
 
 - (void)unloadModel {
     app->unloadModel();
+    
+    /*if (_isModelVisible) {
+        _isModelVisible = NO;
+        if (self.onModelVisibilityUpdate) {
+            self.onModelVisibilityUpdate(NO);
+        }
+    }*/
 }
 
 - (UIImage *)captureSnapshot {
@@ -294,6 +309,13 @@
         simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(uprightTransform);
         self.anchor = [[ARAnchor alloc] initWithName:@"object" transform:simd_transform];
         [self.session addAnchor:self.anchor];
+        
+        if (!_isModelVisible) {
+            _isModelVisible = YES;
+            if (self.onModelVisibilityUpdate) {
+                self.onModelVisibilityUpdate(YES);
+            }
+        }
     }
 }
 
