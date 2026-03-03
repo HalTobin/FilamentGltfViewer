@@ -22,6 +22,7 @@
 
 #import <FilamentGltfViewer/FilamentScene.h>
 #import <FilamentGltfViewer/FilamentModel.h>
+#import <FilamentGltfViewer/ModelOffset.h>
 #import <FilamentGltfViewer/ModelTapHandler.h>
 
 #import <ARKit/ARKit.h>
@@ -184,8 +185,18 @@
     @try {
         NSData* data = [NSData dataWithContentsOfFile:model.url.path];
         if (!data) return false;
-
-        app->loadModel((const uint8_t*)data.bytes, (uint32_t)data.length);
+        
+        float scale = model.scale != nil ? [model.scale floatValue] : 1.0f;
+                
+        // Extract the offset, defaulting to 0.0 for all axes if it wasn't provided
+        filament::math::float3 offset = {0.0f, 0.0f, 0.0f};
+        if (model.offset != nil) {
+            offset.x = model.offset.x != nil ? [model.offset.x floatValue] : 0.0f;
+            offset.y = model.offset.y != nil ? [model.offset.y floatValue] : 0.0f;
+            offset.z = model.offset.z != nil ? [model.offset.z floatValue] : 0.0f;
+        }
+        
+        app->loadModel((const uint8_t*)data.bytes, (uint32_t)data.length, scale, offset);
         return true;
     }
     @catch (NSException *exception) {

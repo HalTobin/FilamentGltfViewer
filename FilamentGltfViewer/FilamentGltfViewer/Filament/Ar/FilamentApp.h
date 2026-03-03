@@ -71,8 +71,7 @@ public:
 
     void updatePlaneGeometry(const FilamentArPlaneGeometry& geometry);
     
-    //void loadModelFromAsset(FilamentAsset* asset);
-    bool loadModel(const uint8_t* data, uint32_t size);
+    bool loadModel(const uint8_t* data, uint32_t size, float scale, const float3& offset);
     void unloadModel();
 
 private:
@@ -85,6 +84,9 @@ private:
     void setupView();
     void setupCameraFeedTriangle();
 
+    float currentModelScale = 1.0f;
+    float3 currentModelOffset = {0.0f, 0.0f, 0.0f};
+    
     void* nativeLayer = nullptr;
     uint32_t width, height;
 

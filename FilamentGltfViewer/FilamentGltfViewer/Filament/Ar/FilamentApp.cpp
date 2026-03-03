@@ -39,8 +39,6 @@
 using namespace filamesh;
 using namespace ktxreader;
 
-static constexpr float OBJECT_SCALE = 0.02f;
-
 FilamentApp::FilamentApp(void* nativeLayer, uint32_t width, uint32_t height,
                          const uint8_t* iblData, uint32_t iblSize,
                          const uint8_t* skyboxData, uint32_t skyboxSize)
@@ -81,7 +79,11 @@ void FilamentApp::render(const FilamentArFrame& frame) {
     if (app.asset) {
         auto& tcm = engine->getTransformManager();
         auto i = tcm.getInstance(app.asset->getRoot());
-        tcm.setTransform(i, meshTransform * mat4f::scaling(OBJECT_SCALE));
+        tcm.setTransform(
+                         i,
+                         meshTransform *
+                         mat4f::translation(currentModelOffset) *
+                         mat4f::scaling(currentModelScale));
     }
     
     // Rotate the mesh a little bit each frame.
@@ -93,7 +95,8 @@ void FilamentApp::render(const FilamentArFrame& frame) {
     tcm.setTransform(i,
                      meshTransform *
                      mat4f(meshRotation) *
-                     mat4f::scaling(OBJECT_SCALE));
+                     mat4f::translation(currentModelOffset) *
+                     mat4f::scaling(currentModelScale));
 
     if (renderer->beginFrame(swapChain)) {
         renderer->render(view);
@@ -199,8 +202,11 @@ void FilamentApp::updatePlaneGeometry(const FilamentArPlaneGeometry& geometry) {
     scene->addEntity(app.planeGeometry);
 }
 
-bool FilamentApp::loadModel(const uint8_t* data, uint32_t size) {
+bool FilamentApp::loadModel(const uint8_t* data, uint32_t size, float scale, const float3& offset) {
     unloadModel();
+    
+    currentModelScale = scale;
+    currentModelOffset = offset;
 
     if (!app.assetLoader) return false;
 

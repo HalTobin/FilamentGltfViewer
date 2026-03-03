@@ -18,11 +18,14 @@ enum ModelPlaceholder {
     static let models: [FilamentModel] = [
         FilamentModel(
             url: boxUrl,
-            name: "box"
+            name: "box",
+            scale: 0.2,
+            offset: ModelOffset(x: 0.0, y: 0.0, z: -1.0)
         ),
         FilamentModel(
             url: helmetUrl,
-            name: "helmet"
+            name: "helmet",
+            scale: 0.5
         )
     ]
     
