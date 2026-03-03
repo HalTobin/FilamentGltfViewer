@@ -195,13 +195,6 @@
 
 - (void)unloadModel {
     app->unloadModel();
-    
-    /*if (_isModelVisible) {
-        _isModelVisible = NO;
-        if (self.onModelVisibilityUpdate) {
-            self.onModelVisibilityUpdate(NO);
-        }
-    }*/
 }
 
 - (UIImage *)captureSnapshot {
@@ -316,14 +309,32 @@
         }
 
         ARHitTestResult *result = results.firstObject;
-        mat4f hitTransform = FILAMENT_MAT4F_FROM_SIMD(result.worldTransform);
+                
+        // Get the camera's position
+        simd_float4x4 cameraTransform = currentFrame.camera.transform;
+        float cameraX = cameraTransform.columns[3].x;
+        float cameraZ = cameraTransform.columns[3].z;
         
-        // Extract ONLY the translation to keep the model perfectly upright, avoiding ground slopes
-        mat4f uprightTransform = mat4f::translation(hitTransform[3].xyz);
+        // Get the hit's position
+        simd_float4x4 hitTransform = result.worldTransform;
+        float hitX = hitTransform.columns[3].x;
+        float hitY = hitTransform.columns[3].y;
+        float hitZ = hitTransform.columns[3].z;
+        
+        // Calculate the angle from the object to the camera on the XZ plane
+        float dx = cameraX - hitX;
+        float dz = cameraZ - hitZ;
+        float angle = atan2(dx, dz);
+        
+        // Create the combined translation and rotation transform
+        using namespace filament::math;
+        mat4f translationMat = mat4f::translation(float3{hitX, hitY, hitZ});
+        mat4f rotationMat = mat4f::rotation(angle, float3{0.0f, 1.0f, 0.0f});
+        mat4f finalTransform = translationMat * rotationMat;
 
-        app->setObjectTransform(uprightTransform);
+        app->setObjectTransform(finalTransform);
 
-        simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(uprightTransform);
+        simd_float4x4 simd_transform = SIMD_FLOAT4X4_FROM_FILAMENT(finalTransform);
         self.anchor = [[ARAnchor alloc] initWithName:@"object" transform:simd_transform];
         [self.session addAnchor:self.anchor];
         
