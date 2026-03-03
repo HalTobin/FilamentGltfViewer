@@ -44,7 +44,9 @@ using utils::EntityManager;
 class FilamentApp {
 public:
 
-    FilamentApp(void* nativeLayer, uint32_t width, uint32_t height);
+    FilamentApp(void* nativeLayer, uint32_t width, uint32_t height,
+                    const uint8_t* iblData = nullptr, uint32_t iblSize = 0,
+                    const uint8_t* skyboxData = nullptr, uint32_t skyboxSize = 0);
     ~FilamentApp();
     FilamentApp(const FilamentApp&) = delete;
     FilamentApp& operator=(const FilamentApp&) = delete;
@@ -106,6 +108,11 @@ private:
         Entity sun;
         FullScreenTriangle* cameraFeedTriangle = nullptr;
 
+        std::vector<uint8_t> iblDataBuffer;
+        std::vector<uint8_t> skyboxDataBuffer;
+        Texture* skyboxTexture = nullptr;
+        Skybox* skybox = nullptr;
+        
         VertexBuffer* planeVertices = nullptr;
         IndexBuffer* planeIndices = nullptr;
         Entity planeGeometry;

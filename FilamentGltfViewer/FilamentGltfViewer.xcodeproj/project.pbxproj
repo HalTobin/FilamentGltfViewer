@@ -14,6 +14,8 @@
 		4563DCE696DE30C636DCD0A7 /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 7B143193C66EEC566ACE187D /* default_env_ibl.ktx */; };
 		46B87C972E50E9B99754503B /* Scene in Resources */ = {isa = PBXBuildFile; fileRef = FEFF3F279CEA5B3BA808B017 /* Scene */; };
 		47A81494EDB893D038ECF35A /* FILModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF7E31D57CE83A3FA8EB2F /* FILModelView.mm */; };
+		4B0BBE7E2F56E40C00C55AD2 /* venetian_crossroads_2k_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 4B0BBE7C2F56E40C00C55AD2 /* venetian_crossroads_2k_ibl.ktx */; };
+		4B0BBE7F2F56E40C00C55AD2 /* venetian_crossroads_2k_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 4B0BBE7D2F56E40C00C55AD2 /* venetian_crossroads_2k_skybox.ktx */; };
 		4B1EA6A42F471BE700BA6B5A /* FilamentGltfArView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA6A32F471BE700BA6B5A /* FilamentGltfArView.swift */; };
 		4B1EA6AF2F471C2E00BA6B5A /* FilamentApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6A72F471C2E00BA6B5A /* FilamentApp.h */; };
 		4B1EA6B02F471C2E00BA6B5A /* FullScreenTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1EA6AD2F471C2E00BA6B5A /* FullScreenTriangle.h */; };
@@ -82,6 +84,8 @@
 		2747C08325D8F789E6A45E1F /* FilamentGltfViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FilamentGltfViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE18FF0DC208425D2EAA99 /* FilamentGltfViewerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentGltfViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493D31E7AC895EA5BECB9603 /* FILModelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FILModelView.h; sourceTree = "<group>"; };
+		4B0BBE7C2F56E40C00C55AD2 /* venetian_crossroads_2k_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_ibl.ktx; sourceTree = "<group>"; };
+		4B0BBE7D2F56E40C00C55AD2 /* venetian_crossroads_2k_skybox.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_skybox.ktx; sourceTree = "<group>"; };
 		4B1EA69F2F471BE000BA6B5A /* camera_feed.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = camera_feed.mat; sourceTree = "<group>"; };
 		4B1EA6A02F471BE000BA6B5A /* clear_coat.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = clear_coat.mat; sourceTree = "<group>"; };
 		4B1EA6A12F471BE000BA6B5A /* shadow_plane.mat */ = {isa = PBXFileReference; lastKnownFileType = text; path = shadow_plane.mat; sourceTree = "<group>"; };
@@ -99,9 +103,6 @@
 		4B1EA6B92F471CC500BA6B5A /* resources.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = resources.bin; sourceTree = "<group>"; };
 		4B1EA6BA2F471CC500BA6B5A /* resources.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = resources.S; sourceTree = "<group>"; };
 		4B1EA6BB2F471CC500BA6B5A /* resources.apple.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = resources.apple.S; sourceTree = "<group>"; };
-		4B1EA6BC2F471F6F00BA6B5A /* sh.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sh.txt; sourceTree = "<group>"; };
-		4B1EA6BD2F471F6F00BA6B5A /* venetian_crossroads_2k_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_ibl.ktx; sourceTree = "<group>"; };
-		4B1EA6BE2F471F6F00BA6B5A /* venetian_crossroads_2k_skybox.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = venetian_crossroads_2k_skybox.ktx; sourceTree = "<group>"; };
 		4B1EA6C12F47259C00BA6B5A /* Resources.S */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = Resources.S; sourceTree = "<group>"; };
 		4B1EA6C42F4729CD00BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		4B1EA6C72F4729F900BA6B5A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/iOSSupport/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -168,7 +169,6 @@
 		4B1EA6A22F471BE000BA6B5A /* Materials */ = {
 			isa = PBXGroup;
 			children = (
-				4B1EA6BF2F471F6F00BA6B5A /* venetian_crossroads_2k */,
 				4B1EA6B82F471CC500BA6B5A /* resources.h */,
 				4B1EA6B92F471CC500BA6B5A /* resources.bin */,
 				4B1EA6BA2F471CC500BA6B5A /* resources.S */,
@@ -194,16 +194,6 @@
 				4B1EA6AE2F471C2E00BA6B5A /* MathHelpers.h */,
 			);
 			path = Ar;
-			sourceTree = "<group>";
-		};
-		4B1EA6BF2F471F6F00BA6B5A /* venetian_crossroads_2k */ = {
-			isa = PBXGroup;
-			children = (
-				4B1EA6BC2F471F6F00BA6B5A /* sh.txt */,
-				4B1EA6BD2F471F6F00BA6B5A /* venetian_crossroads_2k_ibl.ktx */,
-				4B1EA6BE2F471F6F00BA6B5A /* venetian_crossroads_2k_skybox.ktx */,
-			);
-			path = venetian_crossroads_2k;
 			sourceTree = "<group>";
 		};
 		4B1EA6C02F47259000BA6B5A /* SupportFiles */ = {
@@ -265,6 +255,8 @@
 		AA2DF69F35290F7058E33C24 /* default_env */ = {
 			isa = PBXGroup;
 			children = (
+				4B0BBE7C2F56E40C00C55AD2 /* venetian_crossroads_2k_ibl.ktx */,
+				4B0BBE7D2F56E40C00C55AD2 /* venetian_crossroads_2k_skybox.ktx */,
 				7B143193C66EEC566ACE187D /* default_env_ibl.ktx */,
 				5F18E8B2600F2F12CF73F70B /* default_env_skybox.ktx */,
 			);
@@ -411,6 +403,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0BBE7E2F56E40C00C55AD2 /* venetian_crossroads_2k_ibl.ktx in Resources */,
+				4B0BBE7F2F56E40C00C55AD2 /* venetian_crossroads_2k_skybox.ktx in Resources */,
 				F12BE87FE4945058451C84F3 /* Assets.xcassets in Resources */,
 				46B87C972E50E9B99754503B /* Scene in Resources */,
 				4563DCE696DE30C636DCD0A7 /* default_env_ibl.ktx in Resources */,

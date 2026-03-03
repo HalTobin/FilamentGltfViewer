@@ -15,14 +15,18 @@ struct ModelView: View {
     var body: some View {
         ZStack(alignment: .top) {
             
-            let scene = FilamentScene(
-                envSkyboxPath: EnvironmentLight.skybox,
-                envIblPath: EnvironmentLight.ibl
+            let virtualScene = FilamentScene(
+                envSkyboxPath: EnvironmentLight.classicalSkybox,
+                envIblPath: EnvironmentLight.classicalIbl
+            )
+            let worldScene = FilamentScene(
+                envSkyboxPath: EnvironmentLight.arSkybox,
+                envIblPath: EnvironmentLight.arIbl
             )
             ZStack {
                 switch (mode) {
                 case .classical: FilamentGltfView(
-                    scene: scene,
+                    scene: virtualScene,
                     model: currentModel,
                     onModelTap: { model in
                         print("onTap(): \(model?.name ?? "nil")")
@@ -30,7 +34,7 @@ struct ModelView: View {
                 )
                 case .ar: ZStack(alignment: .bottom) {
                     FilamentGltfArView(
-                        scene: scene,
+                        scene: worldScene,
                         model: currentModel,
                         onModelTap: { model in
                             print("onTap(): \(model?.name ?? "nil")")

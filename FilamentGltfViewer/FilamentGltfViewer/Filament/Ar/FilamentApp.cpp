@@ -41,8 +41,18 @@ using namespace ktxreader;
 
 static constexpr float OBJECT_SCALE = 0.02f;
 
-FilamentApp::FilamentApp(void* nativeLayer, uint32_t width, uint32_t height)
+FilamentApp::FilamentApp(void* nativeLayer, uint32_t width, uint32_t height,
+                         const uint8_t* iblData, uint32_t iblSize,
+                         const uint8_t* skyboxData, uint32_t skyboxSize)
         : nativeLayer(nativeLayer), width(width), height(height) {
+            
+    if (iblData && iblSize > 0) {
+        app.iblDataBuffer.assign(iblData, iblData + iblSize);
+    }
+    if (skyboxData && skyboxSize > 0) {
+        app.skyboxDataBuffer.assign(skyboxData, skyboxData + skyboxSize);
+    }
+    
     setupFilament();
     setupCameraFeedTriangle();
     setupIbl();
@@ -259,6 +269,9 @@ FilamentApp::~FilamentApp() {
 
     engine->destroy(app.indirectLight);
     engine->destroy(app.iblTexture);
+    
+    if (app.skyboxTexture) engine->destroy(app.skyboxTexture);
+    if (app.skybox) engine->destroy(app.skybox);
 
     if (app.planeVertices) engine->destroy(app.planeVertices);
     if (app.planeIndices) engine->destroy(app.planeIndices);
@@ -289,19 +302,21 @@ void FilamentApp::setupFilament() {
 }
 
 void FilamentApp::setupIbl() {
-    image::Ktx1Bundle* iblBundle = new image::Ktx1Bundle(RESOURCES_VENETIAN_CROSSROADS_2K_IBL_DATA,
-                                                       RESOURCES_VENETIAN_CROSSROADS_2K_IBL_SIZE);
+    const uint8_t* iblData = app.iblDataBuffer.data();
+    uint32_t iblSize = app.iblDataBuffer.size();
+    
+    image::Ktx1Bundle* iblBundle = new image::Ktx1Bundle(iblData, iblSize);
     float3 harmonics[9];
     iblBundle->getSphericalHarmonics(harmonics);
     app.iblTexture = Ktx1Reader::createTexture(engine, iblBundle, false);
-
+    
     app.indirectLight = IndirectLight::Builder()
         .reflections(app.iblTexture)
         .irradiance(3, harmonics)
         .intensity(30000)
         .build(*engine);
     scene->setIndirectLight(app.indirectLight);
-
+    
     app.sun = EntityManager::get().create();
     LightManager::Builder(LightManager::Type::SUN)
         .castShadows(true)

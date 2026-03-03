@@ -91,7 +91,24 @@
 
     uint32_t nativeWidth = (uint32_t) nativeBounds.size.width;
     uint32_t nativeHeight = (uint32_t) nativeBounds.size.height;
-    app = new FilamentApp((__bridge void*) metalLayer, nativeWidth, nativeHeight);
+    
+    NSData *iblData = nil;
+    NSData *skyboxData = nil;
+    
+    if (_scene.envIblPath) {
+        iblData = [NSData dataWithContentsOfURL:_scene.envIblPath];
+    }
+    if (_scene.envSkyboxPath) {
+        skyboxData = [NSData dataWithContentsOfURL:_scene.envSkyboxPath];
+    }
+    
+    app = new FilamentApp((__bridge void*) metalLayer,
+                              nativeWidth,
+                              nativeHeight,
+                              (const uint8_t*)iblData.bytes,
+                              (uint32_t)iblData.length,
+                              (const uint8_t*)skyboxData.bytes,
+                              (uint32_t)skyboxData.length);
 
     // Not a beautiful fix, but it should do it for now
     app->setObjectTransform(mat4f::translation(float3{0.f, -1000.f, 0.f}));
