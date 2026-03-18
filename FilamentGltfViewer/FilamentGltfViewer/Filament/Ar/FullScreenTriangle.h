@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #ifndef FullScreenTriangle_h
 #define FullScreenTriangle_h
 
@@ -53,3 +55,5 @@ private:
 };
 
 #endif /* FullScreenTriangle_h */
+
+#endif

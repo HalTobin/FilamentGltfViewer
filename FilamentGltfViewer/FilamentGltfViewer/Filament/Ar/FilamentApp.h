@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #ifndef FilamentApp_h
 #define FilamentApp_h
 
@@ -132,3 +134,5 @@ private:
 };
 
 #endif /* FilamentApp_h */
+
+#endif

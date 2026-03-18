@@ -1,3 +1,5 @@
+#if !TARGET_OS_SIMULATOR
+
 #import <UIKit/UIKit.h>
 
 #import <FILModelView.h>
@@ -24,3 +26,5 @@
 @property(nonatomic, strong) FILModelView* modelView;
 
 @end
+
+#endif

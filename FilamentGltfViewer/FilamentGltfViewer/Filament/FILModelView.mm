@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #include "FILModelView.h"
 
 #import <Foundation/Foundation.h>
@@ -415,3 +417,5 @@ const float kSensitivity = 100.0f;
 }
 
 @end
+
+#endif

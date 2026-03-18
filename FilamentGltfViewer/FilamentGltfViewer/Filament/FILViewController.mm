@@ -1,3 +1,5 @@
+#if !TARGET_OS_SIMULATOR
+
 #import "FILViewController.h"
 #include <UIKit/UIKit.h>
 
@@ -367,3 +369,5 @@ const float kToastDelayDuration = 2.0f;
 }
 
 @end
+
+#endif

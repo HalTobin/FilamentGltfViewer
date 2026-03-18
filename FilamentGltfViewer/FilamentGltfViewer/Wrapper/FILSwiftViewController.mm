@@ -3,6 +3,8 @@
 #import <FilamentGltfViewer/FilamentScene.h>
 #import <FilamentGltfViewer/ModelTapHandler.h>
 
+#if !TARGET_OS_SIMULATOR
+
 @implementation FILSwiftViewController {
     FILViewController* _impl;
     FilamentModel* _model;
@@ -51,3 +53,31 @@
 }
 
 @end
+
+#else
+
+@implementation FILSwiftViewController
+
+- (instancetype)initWithScene:(FilamentScene *)scene {
+    return [super init];
+}
+
+- (instancetype)initWithScene:(FilamentScene *)scene
+                   onModelTap:(ModelTapHandler)onModelTap {
+    return [super init];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (bool)loadModel:(id)model {
+    return false;
+}
+
+- (void)unloadModel {
+}
+
+@end
+
+#endif

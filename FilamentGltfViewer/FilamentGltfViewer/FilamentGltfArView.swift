@@ -28,7 +28,7 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
         self.onModelVisibilityUpdate = onModelVisibilityUpdate
     }
     
-    public func makeUIViewController(context: Context) -> UIViewController {
+    /*public func makeUIViewController(context: Context) -> UIViewController {
         let viewController = FILARSwiftViewController(
             scene: scene,
             onModelTap: { onModelTap($0) }
@@ -43,6 +43,27 @@ public struct FilamentGltfArView: UIViewControllerRepresentable {
             viewController.load(safeModel)
         }
         return viewController
+    }*/
+    
+    public func makeUIViewController(context: Context) -> UIViewController {
+        #if targetEnvironment(simulator)
+        return createUnsupportedFallbackViewController()
+        #else
+        let viewController = FILARSwiftViewController(
+            scene: scene,
+            onModelTap: { onModelTap($0) }
+        )
+        viewController.onModelVisibilityUpdate = { isVisible in
+            DispatchQueue.main.async {
+                self.onModelVisibilityUpdate?(isVisible)
+            }
+        }
+        
+        if let safeModel = model {
+            viewController.load(safeModel)
+        }
+        return viewController
+        #endif
     }
     
     public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {

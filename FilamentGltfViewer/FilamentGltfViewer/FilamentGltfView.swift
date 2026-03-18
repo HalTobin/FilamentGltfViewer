@@ -17,7 +17,7 @@ public struct FilamentGltfView: UIViewControllerRepresentable {
         self.onModelTap = onModelTap
     }
     
-    public func makeUIViewController(context: Context) -> UIViewController {
+    /*public func makeUIViewController(context: Context) -> UIViewController {
         let viewController = FILSwiftViewController(
             scene: scene,
             onModelTap: { onModelTap($0) }
@@ -26,6 +26,21 @@ public struct FilamentGltfView: UIViewControllerRepresentable {
             viewController.load(safeModel)
         }
         return viewController
+    }*/
+    
+    public func makeUIViewController(context: Context) -> UIViewController {
+        #if targetEnvironment(simulator)
+        return createUnsupportedFallbackViewController()
+        #else
+        let viewController = FILSwiftViewController(
+            scene: scene,
+            onModelTap: { onModelTap($0) }
+        )
+        if let safeModel = model {
+            viewController.load(safeModel)
+        }
+        return viewController
+        #endif
     }
     
     public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {

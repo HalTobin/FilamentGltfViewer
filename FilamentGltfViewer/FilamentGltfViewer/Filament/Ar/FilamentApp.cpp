@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #include "FilamentApp.h"
 
 #include <filament/Camera.h>
@@ -365,3 +367,5 @@ void FilamentApp::setupCameraFeedTriangle() {
     app.cameraFeedTriangle = new FullScreenTriangle(engine);
     scene->addEntity(app.cameraFeedTriangle->getEntity());
 }
+
+#endif

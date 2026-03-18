@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #include "FullScreenTriangle.h"
 
 // Includes the camera feed material definition BLOB.
@@ -112,3 +114,5 @@ void FullScreenTriangle::setCameraFeedTexture(void* pixelBufferRef) {
 void FullScreenTriangle::setCameraFeedTransform(filament::math::mat3f transform) {
     mMaterialInstance->setParameter("textureTransform", transform);
 }
+
+#endif

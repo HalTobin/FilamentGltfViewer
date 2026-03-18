@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #import <UIKit/UIKit.h>
 #import <FilamentGltfViewer/ModelOffset.h>
 
@@ -114,3 +116,4 @@ typedef void (^PickCallback)(utils::Entity);
 
 NS_ASSUME_NONNULL_END
 
+#endif

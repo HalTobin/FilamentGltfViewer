@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#if !TARGET_OS_SIMULATOR
+
 #import "FilamentArViewController.h"
 #import "FilamentApp.h"
 #import "FilamentView.h"
@@ -382,3 +384,5 @@
 }
 
 @end
+
+#endif
